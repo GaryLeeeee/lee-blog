@@ -10,15 +10,15 @@ menu:
   分类:
     url: /categories
     icon: fas fa-bookmark
-  贡献:
+  归档:
     url: /archives
     icon: fas fa-archive
   关于:
     url: /about
     icon: fas fa-user-circle
-  联系方式:
-    url: /contact
-    icon: fas fa-comments
+#  联系方式:
+#    url: /contact
+#    icon: fas fa-comments
 #  Friends:
 #    url: /friends
 #    icon: fas fa-address-book
