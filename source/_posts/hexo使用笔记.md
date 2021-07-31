@@ -83,8 +83,9 @@ hexo d是hexo doploy的缩写，用来部署服务到远程
 |tags|标签名(后面有讲)|
 |categories|分类名(后面有讲)|
 
-## 7.matery主题如果没有tags/categories/about页面？
-### 新增标签tags页面(categories/about类似)
+## 7.常见问题
+### matery主题如果没有tags/categories/about页面？
+新增标签tags页面(categories/about类似)
 `tags`页是用来展示所有标签的页面，如果在你的博客`source`目录下还没有`tags/index.md`文件，那么你就需要新建一个，命令如下：
 >hexo new page "tags"
 
@@ -93,4 +94,7 @@ hexo d是hexo doploy的缩写，用来部署服务到远程
 date: 2021-07-31 16:40:30
 type: "tags"
 layout: "tags"
+
+### 部署远程后没更新
+删除本地.deploy_git目录，重新执行`hexo d -g`
 
