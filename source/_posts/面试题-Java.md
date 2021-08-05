@@ -30,3 +30,20 @@ categories: 面试
   `C++11开始就引入了多线程库`
 * 支持网络编程并且很方便
 * 编译与解释并存
+
+## 三、JDK和JRE
+### 1.JDK
+* `JDK`是`Java Development Kit`的缩写，它是功能齐全的Java SDK。
+* 拥有`JRE`所拥有的一切
+* 有编译器`javac`
+* 允许创建和编译程序
+
+### 2.JRE
+* `JDK`是`Java Runtime Environment`的缩写，也就是Java运行时环境
+* 包含Java虚拟机(`JVM`)，Java类库，Java命令等
+* 不允许创建新程序
+
+### 3.用途
+* 如果只是想运行`Java`程序，只需要安装`JRE`
+* 如果需要进行`Java`编程方面工作，就需要安装`JDK`
+* ...
