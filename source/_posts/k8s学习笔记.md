@@ -56,7 +56,6 @@ categories: k8s
 ### 07 | 白话容器基础（三）：深入理解容器镜像
 > 1.容器里的进程看到的文件系统是什么样子的呢？
 > 2.用户希望每次创建一个新容器时都是看到一个独立的隔离环境
-> 3.用户希望每次都不需要重复创建一些层，比如jdk等
 * 即使开启了`Mount Namespace`，容器进程看到的文件系统也跟宿主机完全一致
   * 原因：`Mount Namespace`修改的是容器进程对于文件系统"挂载点"的认知
   * 所以：只有"挂载"后，进程的视图才会被改变。而在此之前，新创建的容器会直接继承宿主机的各个挂载点
@@ -75,4 +74,22 @@ categories: k8s
   * 3.切换进程的根目录`chroot`(Change Root) //会优先使用`pivot_root`系统调用(如果不支持采用`chroot`)
   
 * 同一台机器上的所有容器，都共享宿主机操作系统的内核
+  * 意味着是全局变量，牵一发而动全身
+  * 相比`虚拟机`的主要缺陷之一：`虚拟机`拥有一个完整的`Guest OS`(不存在影响其他应用)
+
+* 一致性
+  * 镜像打包后，无论在本地、云端等地方，只要解压打包好的容器镜像，那么这个应用所需要的完整的执行环境就会被重现出来
+  * 打通了应用在本地开发和远端执行环境之间难以逾越的鸿沟
   
+> 1.但是否每开发/升级一个应用，都需要重复制作一次rootfs吗
+> 2.比如我在rootfs安装了Java环境来部署我的Java应用，这时候其他同事也需要部署Java应用，那显然希望是能直接用我安装了Java环境的rootfs，而不是重复这个流程
+
+* 层(layer)
+  * 用户制作镜像的每一步操作，都会生成一个层，也就是一个增量`rootfs`
+  * `UnionFS`：目的是将多个不同位置的目录联合挂载(union mount)到同一个目录下。
+    ![挂载前](https://lee-blog-picture.oss-cn-shenzhen.aliyuncs.com/before-union-mount.png)
+    执行
+    `mkdir C`
+    `mount -t aufs -o dirs=./A:./B none ./C`
+    ![挂载后](https://lee-blog-picture.oss-cn-shenzhen.aliyuncs.com/after-union-mount.png)
+    可以发现原来A目录下有a、x，B目录下有b、x，合并后的C中只有a、b、x(x被去重合并了)
