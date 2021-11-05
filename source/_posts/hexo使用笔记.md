@@ -98,3 +98,7 @@ layout: "tags"
 ### 部署远程后没更新
 删除本地.deploy_git目录，重新执行`hexo d -g`
 
+
+### 如果上传本地图片
+在source目录新建一个图片目录(如images)，然后在博客里引用(参考https://zhuanlan.zhihu.com/p/104996801)
+`![img.png](/images/img.png)`
