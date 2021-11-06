@@ -99,6 +99,11 @@ layout: "tags"
 删除本地.deploy_git目录，重新执行`hexo d -g`
 
 
-### 如果上传本地图片
+### 如何上传本地图片
 在source目录新建一个图片目录(如images)，然后在博客里引用(参考https://zhuanlan.zhihu.com/p/104996801)
 `![img.png](/images/img.png)`
+
+### 如何代码格式化
+
+![img.png](source/images/代码高亮优化前.png)
+![代码高亮优化后](/images/代码高亮优化后.png)
