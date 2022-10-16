@@ -155,3 +155,16 @@ public class UserServiceImpl implements UserService {
 ## 三、demo代码地址
 https://github.com/GaryLeeeee/lee-code-repository/tree/master/lee-db-code/src/main/java/com/garylee/repository/mybatisplus
 
+## 四、Q&A
+### 1.如何在控制台打印sql语句？
+* 配置文件为`application.yml`时
+```yaml
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+```
+
+* 配置文件为`application.properties`时
+```properties
+mybatis-plus.configuration.log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+```
