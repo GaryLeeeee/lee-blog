@@ -56,5 +56,23 @@ categories: [MySQL]
 * binlog文件大小超过`max_binlog_size`变量的阈值后
 
 
+## 三、redo log介绍
+### 1、背景
+* InnoDB引擎是以页（数据页）为单位来存储数据的，也就是我们往MySQL插入的所有数据最终都会写入到这个页中
+* 为了减少IO开销，中间会有一个Buffer Pool的区域存在内存中，如果Buffer Pool中没有我们想要的数据，MySQL就会把页中的数据缓存到Buffer Pool中，这样我们就直接操作缓存即可，<font color=red>大大提高了读写性能</font>
 
+### 2、Buffer Pool存在带来的问题
+如果一个事务提交了，在Buffer Pool没来得及刷新（即持久化）回磁盘，MySQL就突然宕机了，这时候这个事务就消失了呢？结论是不会的，这样就违反了事务的持久性。<font color=red>MySQL InnoDB引擎用redo log来保证事务的持久性</font>
+
+### 3、redo log是什么？
+* <font color=red>redo log是InnoDB引擎独有的，用来保证事务的持久性</font>
+* 主要是记录页的修改，比如哪个页某个偏移量处修改了几个字节的值以及具体被修改的值是什么
+* redo log的每一条记录包括：
+    * 表空间号
+    * 数据页号
+    * 偏移量
+    * 具体修改的数据
+    
+### 4、redo log有什么用？
+在事务提交时，我们会将redo log按照刷盘策略刷到磁盘上去，这样即使MySQL宕机了，重启之后也能恢复没有写入磁盘的数据，从而保证数据的持久性
 
