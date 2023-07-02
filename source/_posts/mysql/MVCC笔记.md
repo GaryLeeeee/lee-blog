@@ -44,3 +44,5 @@ Read View包含三个全局属性：
 * RC是每次进行快照读都会生成一个新的Read View
 * RR是只有第一次进行快照读才会生成一个新的Read View（后续快照读都是同一个，所以解决了<font color=red>不可重复读</font>的问题）
 
+## 四、undo log详解
+//TODO
