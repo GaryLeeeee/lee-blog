@@ -24,18 +24,19 @@ MVCC的实现原理主要依赖于记录中的几个属性实现的：
 ## 三、Read View详解
 ### 1、属性
 Read View包含三个全局属性：
-* trx_list：记录Read View生成时刻系统正活跃的事务id，如[1,2,3]
-* up_limit_id：记录trx_list列表中事务id最小的id，如1
-* low_limit_id：记录Read View生成时刻系统尚未分配的下一个事务id，如4
+* m_ids：当前活跃的事务编号集合
+* min_trx_id：最小活跃事务编号
+* max_trx_id：预分配事务编号（当前最大事务编号+1）
+* creator_trx_id：ReadView创建者的事务编号
 
 ### 2、可见性判断规则
-* a、首先判断`DB_TRX_ID`<`up_limit_id`
+* a、首先判断`DB_TRX_ID`<`min_trx_id`
   * **如果成立**：说明当前事务可以看到`DB_TRX_ID`所在的记录
   * **如果不成立**：则走下一个判断
-* b、然后判断`DB_TRX_ID`>=`low_limit_id`
+* b、然后判断`DB_TRX_ID`>=`max_trx_id`
   * **如果成立**：说明当前事务不可以看到`DB_TRX_ID`所在的记录（因为`DB_TRX_ID`所在的记录是在Read View生成后才出现的，所以不可见） 
   * **如果不成立**：则走下一个判断
-* c、最后判断`DB_TRX_ID`存在于`trx_list`
+* c、最后判断`DB_TRX_ID`存在于`m_ids`
   * **如果成立**：说明当前事务不可以看到`DB_TRX_ID`所在的记录（因为Read View生成时刻，<font color=red>该事务还是活跃状态，没有commit</font>，所以修改的数据，当前事务是不可见的）
   * **如果不成立**：说明当前事务可以看到`DB_TRX_ID`所在的记录（因为该事务在Read View生成之前就已经commit，所以修改的数据，当前事务是可见的）
   
@@ -44,5 +45,17 @@ Read View包含三个全局属性：
 * RC是每次进行快照读都会生成一个新的Read View
 * RR是只有第一次进行快照读才会生成一个新的Read View（后续快照读都是同一个，所以解决了<font color=red>不可重复读</font>的问题）
 
+### 4、快照读和当前读有什么区别？
+* **快照读**：select
+* **当前读**：insert、update、delete、select ... for update、select ... lock in share mode
+
 ## 四、undo log详解
+### 1、如果undo log被删除了，版本链不就断了吗？
+undo log版本链不是立即删除，MySQL确保版本链数据不再被<font color=red>引用</font>后再进行删除
+
 //TODO
+
+## 五、问题
+### 1、RR隔离级别下使用MVCC能避免幻读吗？
+能，但不完全能。RR用的是快照读，仅第一次生成，后面使用的ReadView会复用第一次的
+**特例**：当两次<font color=red>快照读</font>之间存在<font color=red>当前读</font>，ReadView会重新生成，从而产生幻读
