@@ -111,3 +111,9 @@ deploy:
 search:
   path: search.xml
   field: post
+
+# 中文链接转拼音
+# npm i hexo-permalink-pinyin --save
+permalink_pinyin:
+  enable: true
+  separator: '-' # default: '-'
