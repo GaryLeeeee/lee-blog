@@ -106,3 +106,98 @@ layout: "tags"
 ### 如何代码格式化
 ![img.png](source/images/代码高亮优化前.png)
 ![代码高亮优化后](/images/代码高亮优化后.png)
+
+### 部署异常（鉴权失败）
+执行指令`hexo d -g`报错
+```
+On branch master
+nothing to commit, working tree clean
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+SHA256:uNiVztksCsDhcc0u9e8BujQXVUpKZIDTMczCvj3tD2s.
+Please contact your system administrator.
+Add correct host key in /c/Users/Administrator/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /c/Users/Administrator/.ssh/known_hosts:1
+RSA host key for github.com has changed and you have requested strict checking.
+Host key verification failed.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+FATAL {
+  err: Error: Spawn failed
+      at ChildProcess.<anonymous> (E:\workplace\lee-blog\node_modules\hexo-util\lib\spawn.js:51:21)
+      at ChildProcess.emit (node:events:513:28)
+      at cp.emit (E:\workplace\lee-blog\node_modules\cross-spawn\lib\enoent.js:34:29)
+      at ChildProcess._handle.onexit (node:internal/child_process:291:12) {
+    code: 128
+  }
+} Something's wrong. Maybe you can find the solution here: %s https://hexo.io/docs/troubleshooting.
+
+```
+
+检查了本地ssh和远程github的ssh匹配，排除不匹配的可能性
+执行`ssh -T git@github.com`，验证主机是否与github网站之间的ssh通信是否连接成功
+```
+Administrator@243Z59L59Q55VQT MINGW64 /e/workplace/lee-blog (master)
+$ ssh -T git@github.com
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+SHA256:uNiVztksCsDhcc0u9e8BujQXVUpKZIDTMczCvj3tD2s.
+Please contact your system administrator.
+Add correct host key in /c/Users/Administrator/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /c/Users/Administrator/.ssh/known_hosts:1
+RSA host key for github.com has changed and you have requested strict checking.
+Host key verification failed.
+```
+
+发现`known_hosts`文件异常，尝试删除文件，并重新生成
+```
+Administrator@243Z59L59Q55VQT MINGW64 /e/workplace/lee-blog (master)
+$ ssh -T git@github.com
+The authenticity of host 'github.com (20.205.243.166)' can't be established.
+ECDSA key fingerprint is SHA256:p2QAMXNIC1TJYWeIOttrVc98/R1BUFWu3/LiyKgUfQM.
+Are you sure you want to continue connecting (yes/no)? y
+Please type 'yes' or 'no': yes
+Warning: Permanently added 'github.com,20.205.243.166' (ECDSA) to the list of known hosts.
+Hi GaryLeeeee! You've successfully authenticated, but GitHub does not provide shell access.
+
+Administrator@243Z59L59Q55VQT MINGW64 /e/workplace/lee-blog (master)
+$ ssh -T git@github.com
+Hi GaryLeeeee! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+可以看到校验成功了，重新执行`hexo d -g`
+```
+Administrator@243Z59L59Q55VQT MINGW64 /e/workplace/lee-blog (master)
+$ hexo d -g
+INFO  Validating config
+INFO  Start processing
+INFO  Files loaded in 640 ms
+
+...
+
+On branch master
+nothing to commit, working tree clean
+Counting objects: 1167, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (738/738), done.
+Writing objects: 100% (1167/1167), 7.87 MiB | 254.00 KiB/s, done.
+Total 1167 (delta 397), reused 0 (delta 0)
+remote: Resolving deltas: 100% (397/397), done.
+To github.com:GaryLeeeee/garyleeeee.github.io.git
+ + 06ab1b8...af6b499 HEAD -> master (forced update)
+Branch master set up to track remote branch master from git@github.com:GaryLeeeee/garyleeeee.github.io.git.
+INFO  Deploy done: git
+```
+搞定！
