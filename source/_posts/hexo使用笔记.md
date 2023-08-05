@@ -1,8 +1,8 @@
 ---
 title: hexo使用笔记
 date: 2021-07-31 14:37:45
-tags: 学习笔记
-categories: hexo
+tags: [hexo]
+categories: [hexo]
 ---
 
 ## 1.前提工作

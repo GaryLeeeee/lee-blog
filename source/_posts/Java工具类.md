@@ -1,8 +1,8 @@
 ---
 title: Java工具类
 date: 2022-10-16 20:39:56
-tags: [Java,工具类,JSON]
-categories: [工具类]
+tags: [Java,Http,工具]
+categories: [Java]
 ---
 
 # JSON

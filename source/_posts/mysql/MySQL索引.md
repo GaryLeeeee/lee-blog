@@ -1,7 +1,7 @@
 ---
 title: MySQL索引
 date: 2023-07-03 16:40:46
-tags: [MySQL,面试题]
+tags: [MySQL,索引]
 categories: [MySQL]
 ---
 

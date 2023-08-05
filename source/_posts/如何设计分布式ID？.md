@@ -1,8 +1,8 @@
 ---
 title: 如何设计分布式ID？
 date: 2023-07-19 18:05:06
-tags: 并发
-categories: 并发
+tags: [并发]
+categories: [并发]
 ---
 
 ## 一、为什么要使用分布式ID？

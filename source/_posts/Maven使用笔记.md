@@ -1,8 +1,8 @@
 ---
 title: Maven使用笔记
 date: 2021-11-07 23:14:36
-tags: Maven
-categories: Maven
+tags: [Maven]
+categories: [Maven]
 ---
 
 

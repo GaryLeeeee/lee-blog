@@ -1,8 +1,8 @@
 ---
 title: Mybatis-Plus使用笔记
 date: 2021-11-09 12:59:01
-tags: [Mybatis,Mybatis-Plus]
-categories: [Mybatis,Mybatis-Plus,SQL,MySQL]
+tags: [MySQL,Mybatis,Mybatis-Plus]
+categories: [MySQL]
 ---
 
 ## 一、官方文档

@@ -1,8 +1,8 @@
 ---
 title: k8s学习笔记
 date: 2021-08-12 22:04:11
-tags: 学习笔记
-categories: k8s
+tags: [k8s]
+categories: [k8s]
 ---
 
 ## 容器技术概念入门篇

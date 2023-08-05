@@ -1,7 +1,8 @@
 ---
 title: Spring如何解决循环依赖的问题？
 date: 2023-08-01 15:57:52
-tags:
+tags: [Spring,循环依赖]
+categories: [Spring]
 ---
 
 ## 一、什么是循环依赖？

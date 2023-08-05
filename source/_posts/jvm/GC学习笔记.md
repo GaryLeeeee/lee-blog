@@ -1,8 +1,8 @@
 ---
 title: GC学习笔记
 date: 2023-07-12 16:50:22
-tags: [jvm,gc]
-categories: [jvm]
+tags: [JVM,GC]
+categories: [JVM]
 ---
 
 ## 一、介绍

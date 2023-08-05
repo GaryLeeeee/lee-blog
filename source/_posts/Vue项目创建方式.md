@@ -1,8 +1,8 @@
 ---
 title: Vue项目创建方式
 date: 2022-03-02 22:52:12
-tags: [vue]
-categories: [vue]
+tags: [Vue]
+categories: [Vue]
 ---
 
 ## 一、相关链接

@@ -1,7 +1,8 @@
 ---
 title: 如何排查CPU飙升问题？
 date: 2023-07-29 19:37:05
-tags: CPU
+tags: [场景题,CPU]
+categories: [场景题]
 ---
 
 ## 一、CPU飙升可能的原因

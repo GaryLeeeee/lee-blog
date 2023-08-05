@@ -1,8 +1,8 @@
 ---
 title: Java面试题
 date: 2023-07-25 23:13:57
-tags: 面试题
-categories: 面试题
+tags: [Java]
+categories: [面试]
 ---
 
 ## 一、随手记录的Java面试题

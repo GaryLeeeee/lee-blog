@@ -1,8 +1,8 @@
 ---
 title: Http学习笔记
 date: 2023-07-03 18:00:48
-tags: Http
-categories: Http
+tags: [Http]
+categories: [Http]
 ---
 
 ## 一、面试题

@@ -1,7 +1,7 @@
 ---
 title: MySQL日志篇
 date: 2023-06-27 17:40:29
-tags: [MySQL,日志,主从复制]
+tags: [MySQL,日志]
 categories: [MySQL]
 ---
 

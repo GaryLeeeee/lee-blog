@@ -1,7 +1,7 @@
 ---
 title: MySQL事务
 date: 2023-07-03 13:44:09
-tags: [MySQL]
+tags: [MySQL,事务]
 categories: [MySQL]
 ---
 

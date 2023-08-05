@@ -1,8 +1,8 @@
 ---
 title: 如何用Redis实现延迟队列？
 date: 2023-07-29 14:43:37
-tags: [Redis,延迟队列,RocketMQ]
-categories: 延迟队列
+tags: [场景题,Redis,延迟队列,RocketMQ]
+categories: [场景题]
 ---
 
 ## 一、什么是延迟队列？

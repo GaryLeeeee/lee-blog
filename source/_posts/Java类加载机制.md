@@ -1,7 +1,8 @@
 ---
 title: Java类加载机制
 date: 2023-08-04 22:00:10
-tags: [双亲委派模型]
+tags: [JVM,双亲委派模型]
+categories: [JVM]
 ---
 
 ## 一、背景

@@ -1,8 +1,8 @@
 ---
 title: RabbitMQ使用笔记
 date: 2021-11-06 13:51:29
-tags: RabbitMQ
-categories: RabbitMQ
+tags: [RabbitMQ]
+categories: [RabbitMQ]
 ---
 ## 一、依赖
 ```xml

@@ -1,8 +1,8 @@
 ---
 title: Redis和MySQL如何保证数据一致性？
 date: 2023-07-23 23:28:07
-tags: 并发
-categories: 并发
+tags: [并发,Redis,MySQL]
+categories: [并发]
 ---
 
 ## 一、背景

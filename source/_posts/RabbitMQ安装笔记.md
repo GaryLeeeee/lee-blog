@@ -2,7 +2,7 @@
 title: RabbitMQ安装笔记
 date: 2021-11-05 21:07:13
 tags: [RabbitMQ,工具安装]
-categories: 工具
+categories: [RabbitMQ]
 ---
 
 # windows10安装

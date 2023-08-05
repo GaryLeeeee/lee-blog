@@ -2,7 +2,7 @@
 title: 面试题(Java)
 date: 2021-08-03 12:52:00
 tags: [面试,Java]
-categories: 面试
+categories: [面试]
 ---
 
 # Java基础

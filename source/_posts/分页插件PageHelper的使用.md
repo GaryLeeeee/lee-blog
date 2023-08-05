@@ -1,8 +1,8 @@
 ---
 title: 分页插件PageHelper的使用
 date: 2022-10-19 22:36:15
-tags: [Mybatis,PageHelper]
-categories: [Mybatis,PageHelper]
+tags: [PageHelper,Mybatis]
+categories: [PageHelper]
 ---
 
 ## 一、介绍

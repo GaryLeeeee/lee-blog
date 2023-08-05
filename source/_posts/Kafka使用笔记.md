@@ -1,8 +1,8 @@
 ---
 title: Kafka使用笔记
 date: 2021-11-07 23:25:22
-tags: Kafka
-categories: Kafka
+tags: [Kafka]
+categories: [Kafka]
 ---
 
 
