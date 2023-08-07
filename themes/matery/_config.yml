@@ -43,9 +43,9 @@ menu:
 # 站点运行开始时间.
 time:
   enable: false
-  year: 2019 # 年份
-  month: 06 # 月份
-  date: 28 # 日期
+  year: 2021 # 年份
+  month: 07 # 月份
+  date: 25 # 日期
   hour: 00 # 小时
   minute: 00 # 分钟
   second: 00 # 秒
@@ -162,8 +162,8 @@ code:
 reward:
   enable: true
   title: 你的赏识是我前进的动力
-  wechat: /medias/reward/wechat.png
-  alipay: /medias/reward/alipay.jpg
+  wechat: #收款url，暂不实现
+  alipay: #收款url，暂不实现
 
 # Whether to activate the copyright information of the blog and author when copying the post content.
 # minCharNumber: Approve copyright information by copying at least how many characters.
@@ -217,17 +217,17 @@ myProjects:
       icon: fas fa-file-alt
       iconBackground: 'linear-gradient(to bottom right, #66BB6A 0%, #81C784 100%)'
       url: https://github.com/GaryLeeeee/lee-framework
-      desc: 自己简单实现的一个spring mvc框架。
+      desc: 自己简单实现的一个spring mvc框架
     lee-rpc:
         icon: fas fa-file-alt
         iconBackground: 'linear-gradient(to bottom right, #F06292 0%, #EF5350 100%)'
         url: https://github.com/GaryLeeeee/lee-rpc
-        desc: 自己简单实现的一个rpc框架。
+        desc: 自己简单实现的一个rpc框架
     lee-code-repository:
         icon: fas fa-database
         iconBackground: 'linear-gradient(to bottom right, #29B6F6 0%, #1E88E5 100%)'
         url: https://github.com/GaryLeeeee/lee-code-repository
-        desc: 记录自己的代码库。
+        desc: 记录自己的代码库
 
 # config my skills informations in about page.
 # If you don't want to display this `My Skills` content, you can deactivate or delete this configuration.
