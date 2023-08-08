@@ -1,4 +1,7 @@
 # Gary's Blog
+|MySQL|Redis|JVM|并发|Kafka|Http|工具|场景题|代码优化|Spring|
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| [:floppy_disk:](#floppy_disk-MySQL) | [:cloud:](#cloud-Redis) | [:computer:](#computer-JVM) | [:dart:](#dart-并发) | [:art:](#art-Kafka) |[:memo:](#memo-Http)| [:wrench:](#wrench-工具&插件&框架) | [:book:](#book-场景题) |[:battery:](#battery-代码优化)| [:coffee:](#coffee-Spring) |
 
 ## MySQL
 - [MySQL锁](https://garyleeeee.github.io/2023/07/06/mysql/mysql-suo/)
@@ -16,12 +19,12 @@
 
 ## 并发
 - [高可用学习笔记(科普向)](https://garyleeeee.github.io/2021/08/01/gao-ke-yong-xue-xi-bi-ji-ke-pu-xiang/)
-- [线程池学习笔记](https://garyleeeee.github.io/2021/07/28/xian-cheng-chi-xue-xi-bi-ji/)
+- :trophy:[线程池学习笔记](https://garyleeeee.github.io/2021/07/28/xian-cheng-chi-xue-xi-bi-ji/)
 - [如何限流？](https://garyleeeee.github.io/2023/07/19/ru-he-xian-liu/)
 - [如何设计分布式ID？](https://garyleeeee.github.io/2023/07/19/ru-he-she-ji-fen-bu-shi-id/)
 - [如何解决幂等性问题？](https://garyleeeee.github.io/2023/07/21/ru-he-jie-jue-mi-deng-xing-wen-ti/)
 - [如何设计一个高并发系统？](https://garyleeeee.github.io/2023/07/19/ru-he-she-ji-yi-ge-gao-bing-fa-xi-tong/)
-- [Redis和MySQL如何保证数据一致性？](https://garyleeeee.github.io/2023/07/23/redis-he-mysql-ru-he-bao-zheng-shu-ju-yi-zhi-xing/)
+- :trophy:[Redis和MySQL如何保证数据一致性？](https://garyleeeee.github.io/2023/07/23/redis-he-mysql-ru-he-bao-zheng-shu-ju-yi-zhi-xing/)
 
 ## Kafka
 - [Kafka面试题](https://garyleeeee.github.io/2023/07/12/kafka-mian-shi-ti/)
@@ -40,7 +43,7 @@
 - [Mybatis-Plus使用笔记](https://garyleeeee.github.io/2021/11/09/mybatis-plus-shi-yong-bi-ji/)
 
 ## 场景题
-- [如何设计一个秒杀系统？](https://garyleeeee.github.io/2023/07/17/ru-he-she-ji-yi-ge-miao-sha-xi-tong/)
+- :trophy:[如何设计一个秒杀系统？](https://garyleeeee.github.io/2023/07/17/ru-he-she-ji-yi-ge-miao-sha-xi-tong/)
 - [如何用Redis实现延迟队列？](https://garyleeeee.github.io/2023/07/29/ru-he-yong-redis-shi-xian-yan-chi-dui-lie/)
 - [如何排查CPU飙升问题？](https://garyleeeee.github.io/2023/07/29/ru-he-pai-cha-cpu-biao-sheng-wen-ti/)
 - [如何实现一个点赞功能？](https://garyleeeee.github.io/2023/07/31/ru-he-shi-xian-yi-ge-dian-zan-gong-neng/)
