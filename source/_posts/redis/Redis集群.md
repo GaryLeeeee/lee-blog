@@ -20,11 +20,13 @@ categories: [Redis]
 * 不具备容错和恢复能力（需要等机器重启或手动切换master节点才能恢复）
 * 一旦master节点挂了，不会自动切换新的master节点，导致后续的写请求都失败
 * 存在在线扩容问题
+* 所有slave节点的复制和同步都由master节点来处理，会增加master节点压力
 
-### 2、哨兵模式
+### 2、哨兵模式（Sentinel）
 **特点**：
 * 一主多从
 * 主从复制：所有节点存的是相同数据
+* 适合读多于写场景
 
 **优点**：
 * 读写分离：master节点负责读写，slave节点负责读
@@ -49,7 +51,19 @@ categories: [Redis]
 * Slave节点只是实现冷备机制，不能分担redis读操作压力（只有在master宕机之后才会工作）
 * 客户端实现更复杂
 
-## 二、Redis哨兵模式和Redis Cluster有什么区别？
+## 二、哨兵模式
+**哨兵模式**由一个或多个sentinel实例组成sentinel集群，可以监视一个或多个主服务器和多个从服务器。适合读请求多于写请求的业务场景，比如在秒杀系统中缓存活动信息。如果写请求较多，当集群Slave节点多了，Master节点同步数据的压力会非常大
+
+**检测主观下线状态**
+Sentinel每秒一次向所有与它建立了命令连接的实例（主服务器、从服务器和其他Sentinel）发送PING命令，实例在`down-after-milliseconds`毫秒内返回无效回复，Sentinel就会认为该实例主观下线（SDown）
+
+**检查客观下线状态**
+当一个Sentinel将一个主服务器判断为主观下线后，Sentinel会向监控这个主服务器的所有其他Sentinel发送查询主机状态的命令，如果达到Sentinel配置中的数量的Sentinel实例都判断主服务器为主观下线，则该主服务器就会被判定为客观下线（ODown）
+
+**选举Leader Sentinel**
+当一个主服务器被判定为客观下线后，监视这个主服务器的所有Sentinel会通过选举算法（raft），选出一个Leader Sentinel去执行failover（故障转移）操作
+
+## 三、Redis哨兵模式和Redis Cluster有什么区别？
 **读写**：
 * 哨兵模式通过主从复制，实现读写分离，分担redis读操作压力
 * Redis Cluster的Slave节点只是实现冷备机制，并不分担redis读操作压力（只有在master宕机之后才会工作）
