@@ -153,7 +153,7 @@ public class Test {
 5. 加载并重新运行新的class，得到全新类
 
 ## 四、JDK Proxy和CBLib的区别？
-**实现方式**：JDK Proxy是实现了目标类的接口，CGLib底层是继承了目标类
+**实现方式**：JDK Proxy是实现了目标类的接口，CGLib底层是继承了目标类（所以如果目标类被final修饰，那么它是无法使用CBLib做动态代理的）
 **生成字节码**：JDK Proxy和CGLib都是在运行时生成字节码
 **调用方式**：JDK Proxy是通过反射机制调用，CGLib是通过FastClass机制调用（子类调用父类）
 **class文件**：JDK Proxy只会生成一个class文件，CGLib会生成多个class文件（代理类+代理类对应的fastclass文件+目标类对应的fastclass文件）
