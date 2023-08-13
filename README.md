@@ -1,7 +1,10 @@
 # Gary's Blog
-|MySQL|Redis|JVM|并发|Kafka|Http|工具|场景题|代码优化|Spring|
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [:floppy_disk:](#floppy_disk-MySQL) | [:cloud:](#cloud-Redis) | [:computer:](#computer-JVM) | [:dart:](#dart-并发) | [:art:](#art-Kafka) |[:memo:](#memo-Http)| [:wrench:](#wrench-工具&插件&框架) | [:book:](#book-场景题) | [:battery:](#battery-代码优化) | [:coffee:](#coffee-Spring) |
+|Java|MySQL|Redis|JVM|并发|Kafka|Http|工具|场景题|代码优化|Spring|
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| [:strawberry:](#strawberry-Java) | [:floppy_disk:](#floppy_disk-MySQL) | [:cloud:](#cloud-Redis) | [:computer:](#computer-JVM) | [:dart:](#dart-并发) | [:art:](#art-Kafka) |[:memo:](#memo-Http)| [:wrench:](#wrench-工具&插件&框架) | [:book:](#book-场景题) | [:battery:](#battery-代码优化) | [:coffee:](#coffee-Spring) |
+
+## :strawberry: Java
+- [Java动态代理](https://garyleeeee.github.io/2023/08/12/java-dong-tai-dai-li/)
 
 ## :floppy_disk: MySQL
 - [MySQL锁](https://garyleeeee.github.io/2023/07/06/mysql/mysql-suo/)
