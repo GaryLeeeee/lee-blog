@@ -18,6 +18,7 @@
 - [关于对缓存雪崩和缓存穿透的理解，以及如何避免？](https://garyleeeee.github.io/2023/07/24/guan-yu-dui-huan-cun-xue-beng-he-huan-cun-chuan-tou-de-li-jie-yi-ji-ru-he-bi-mian/)
 - [Redis集群](https://garyleeeee.github.io/2023/08/08/redis/redis-ji-qun/)
 - [Redis过期策略](https://garyleeeee.github.io/2023/08/16/redis/redis-guo-qi-ce-lue/)
+- [Redis内存淘汰策略](https://garyleeeee.github.io/2023/08/16/redis/redis-nei-cun-tao-tai-ce-lue/)
 
 ## :computer: JVM
 - [GC学习笔记](https://garyleeeee.github.io/2023/07/12/jvm/gc-xue-xi-bi-ji/)
