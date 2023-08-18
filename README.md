@@ -15,6 +15,7 @@
 - [如何排查MySQL索引失效的问题？](https://garyleeeee.github.io/2023/08/15/mysql/ru-he-pai-cha-mysql-suo-yin-shi-xiao-de-wen-ti/)
 - [什么是聚簇索引和非聚簇索引？](https://garyleeeee.github.io/2023/08/17/mysql/shi-me-shi-ju-cu-suo-yin-he-fei-ju-cu-suo-yin/)
 - [什么是回表，怎么减少回表的次数？](https://garyleeeee.github.io/2023/08/17/mysql/shi-me-shi-hui-biao-zen-me-jian-shao-hui-biao-de-ci-shu/)
+- [MySQL执行计划分析](https://garyleeeee.github.io/2023/08/18/mysql/mysql-zhi-xing-ji-hua-fen-xi/)
 
 ## :cloud: Redis
 - [关于对缓存雪崩和缓存穿透的理解，以及如何避免？](https://garyleeeee.github.io/2023/07/24/guan-yu-dui-huan-cun-xue-beng-he-huan-cun-chuan-tou-de-li-jie-yi-ji-ru-he-bi-mian/)
