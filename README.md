@@ -18,6 +18,7 @@
 - [MySQL执行计划分析](https://garyleeeee.github.io/2023/08/18/mysql/mysql-zhi-xing-ji-hua-fen-xi/)
 - [如何进行SQL调优？](https://garyleeeee.github.io/2023/08/19/mysql/ru-he-jin-xing-sql-diao-you/)
 - [如何排查慢SQL问题？](https://garyleeeee.github.io/2023/08/19/mysql/ru-he-pai-cha-man-sql-wen-ti/)
+- [limit 1000000,0加载很慢如何优化？](https://garyleeeee.github.io/2023/08/20/mysql/limit1000000-0-jia-zai-hen-man-ru-he-you-hua/)
 
 ## :cloud: Redis
 - [关于对缓存雪崩和缓存穿透的理解，以及如何避免？](https://garyleeeee.github.io/2023/07/24/guan-yu-dui-huan-cun-xue-beng-he-huan-cun-chuan-tou-de-li-jie-yi-ji-ru-he-bi-mian/)
