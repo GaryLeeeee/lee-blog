@@ -26,6 +26,7 @@
 - [Redis过期策略](https://garyleeeee.github.io/2023/08/16/redis/redis-guo-qi-ce-lue/)
 - [Redis内存淘汰策略](https://garyleeeee.github.io/2023/08/16/redis/redis-nei-cun-tao-tai-ce-lue/)
 - [如何处理Redis的大key问题？](https://garyleeeee.github.io/2023/08/19/redis/ru-he-chu-li-redis-de-da-key-wen-ti/)
+- [Redis为什么这么快？](https://garyleeeee.github.io/2023/08/23/redis-wei-shi-me-zhe-me-kuai/)
 
 ## :computer: JVM
 - [GC学习笔记](https://garyleeeee.github.io/2023/07/12/jvm/gc-xue-xi-bi-ji/)
