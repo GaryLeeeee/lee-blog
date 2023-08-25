@@ -41,6 +41,7 @@
 - [如何解决幂等性问题？](https://garyleeeee.github.io/2023/07/21/ru-he-jie-jue-mi-deng-xing-wen-ti/)
 - [如何设计一个高并发系统？](https://garyleeeee.github.io/2023/07/19/ru-he-she-ji-yi-ge-gao-bing-fa-xi-tong/)
 - :trophy:[Redis和MySQL如何保证数据一致性？](https://garyleeeee.github.io/2023/07/23/redis-he-mysql-ru-he-bao-zheng-shu-ju-yi-zhi-xing/)
+- [什么是服务降级？](https://garyleeeee.github.io/2023/08/25/concurrent/shi-me-shi-fu-wu-jiang-ji/)
 
 ## :art: Kafka
 - [Kafka面试题](https://garyleeeee.github.io/2023/07/12/kafka-mian-shi-ti/)
