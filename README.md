@@ -76,3 +76,6 @@
 - [Spring如何解决循环依赖的问题？](https://garyleeeee.github.io/2023/08/01/spring-ru-he-jie-jue-xun-huan-yi-lai-de-wen-ti/)
 - [介绍一下Spring的AOP](https://garyleeeee.github.io/2023/08/13/spring/jie-shao-yi-xia-spring-de-aop/)
 - [Spring Bean的生命周期](https://garyleeeee.github.io/2023/08/22/spring/springbean-de-sheng-ming-zhou-qi/)
+
+## :mag: ElasticSearch
+- [为什么要使用ElasticSearch？](https://garyleeeee.github.io/2023/08/26/wei-shi-me-yao-shi-yong-elasticsearch/)
