@@ -79,3 +79,4 @@
 
 ## :mag: ElasticSearch
 - [为什么要使用ElasticSearch？](https://garyleeeee.github.io/2023/08/26/wei-shi-me-yao-shi-yong-elasticsearch/)
+- [什么是倒排索引？](https://garyleeeee.github.io/2023/08/26/shi-me-shi-dao-pai-suo-yin/)
