@@ -34,6 +34,7 @@
 ## :computer: JVM
 - [GC学习笔记](https://garyleeeee.github.io/2023/07/12/jvm/gc-xue-xi-bi-ji/)
 - [Java类加载机制](https://garyleeeee.github.io/2023/08/04/java-lei-jia-zai-ji-zhi/)
+- [JVM运行时数据区域是怎样的？](https://garyleeeee.github.io/2023/09/06/jvm/jvm-yun-xing-shi-shu-ju-qu-yu-shi-zen-yang-de/)
 
 ## :dart: 并发
 - [高可用学习笔记(科普向)](https://garyleeeee.github.io/2021/08/01/gao-ke-yong-xue-xi-bi-ji-ke-pu-xiang/)
