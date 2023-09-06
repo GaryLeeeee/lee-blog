@@ -49,6 +49,7 @@
 
 ## :art: Kafka
 - [Kafka面试题](https://garyleeeee.github.io/2023/07/12/kafka-mian-shi-ti/)
+- [Kafka如何解决消息积压问题？](https://garyleeeee.github.io/2023/09/06/kafka/kafka-ru-he-jie-jue-xiao-xi-ji-ya-wen-ti/)
 
 ## :memo: Http
 - [Http学习笔记](https://garyleeeee.github.io/2023/07/03/http-xue-xi-bi-ji/)
