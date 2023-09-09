@@ -88,3 +88,6 @@
 ## :mag: ElasticSearch
 - [为什么要使用ElasticSearch？](https://garyleeeee.github.io/2023/08/26/wei-shi-me-yao-shi-yong-elasticsearch/)
 - [什么是倒排索引？](https://garyleeeee.github.io/2023/08/26/shi-me-shi-dao-pai-suo-yin/)
+
+## :triangular_ruler: MyBatis
+- [Mybatis中有哪些占位符？区别是什么？](https://garyleeeee.github.io/2023/09/09/mybatis/mybatis-zhong-you-na-xie-zhan-wei-fu-qu-bie-shi-shi-me/)
