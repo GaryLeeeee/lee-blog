@@ -83,6 +83,7 @@
 - [介绍一下Spring的AOP](https://garyleeeee.github.io/2023/08/13/spring/jie-shao-yi-xia-spring-de-aop/)
 - [Spring Bean的生命周期](https://garyleeeee.github.io/2023/08/22/spring/springbean-de-sheng-ming-zhou-qi/)
 - [Spring事务](https://garyleeeee.github.io/2023/09/06/spring/spring-shi-wu/)
+- [Spring中Bean的作用域有哪些？](https://garyleeeee.github.io/2023/09/08/spring/spring-zhong-bean-de-zuo-yong-yu-you-na-xie/)
 
 ## :mag: ElasticSearch
 - [为什么要使用ElasticSearch？](https://garyleeeee.github.io/2023/08/26/wei-shi-me-yao-shi-yong-elasticsearch/)
