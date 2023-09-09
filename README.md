@@ -46,6 +46,7 @@
 - :trophy:[Redis和MySQL如何保证数据一致性？](https://garyleeeee.github.io/2023/07/23/redis-he-mysql-ru-he-bao-zheng-shu-ju-yi-zhi-xing/)
 - [什么是服务降级？](https://garyleeeee.github.io/2023/08/25/concurrent/shi-me-shi-fu-wu-jiang-ji/)
 - [如何实现一个分布式锁？](https://garyleeeee.github.io/2023/09/05/concurrent/ru-he-shi-xian-yi-ge-fen-bu-shi-suo/)
+- [ThreadLocal是什么？实现原理呢？](https://garyleeeee.github.io/2023/09/08/concurrent/threadlocal-shi-shi-me-shi-xian-yuan-li-ni/)
 
 ## :art: Kafka
 - [Kafka面试题](https://garyleeeee.github.io/2023/07/12/kafka-mian-shi-ti/)
