@@ -49,6 +49,7 @@
 - [如何实现一个分布式锁？](https://garyleeeee.github.io/2023/09/05/concurrent/ru-he-shi-xian-yi-ge-fen-bu-shi-suo/)
 - [ThreadLocal是什么？实现原理呢？](https://garyleeeee.github.io/2023/09/08/concurrent/threadlocal-shi-shi-me-shi-xian-yuan-li-ni/)
 - [synchronized和ReentrantLock有什么区别？](https://garyleeeee.github.io/2023/09/10/synchronized-he-reentrantlock-you-shi-me-qu-bie/)
+- [synchronized的锁升级过程是怎样的？](https://garyleeeee.github.io/2023/09/10/concurrent/synchronized-de-suo-sheng-ji-guo-cheng-shi-zen-yang-de/)
 
 ## :art: Kafka
 - [Kafka面试题](https://garyleeeee.github.io/2023/07/12/kafka-mian-shi-ti/)
