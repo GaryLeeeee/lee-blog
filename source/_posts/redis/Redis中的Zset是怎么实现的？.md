@@ -8,7 +8,7 @@ categories: [Redis]
 ## 一、什么是Zset？
 Zset（也叫Sorted Set）是Redis中的一种数据结构，支持传member和score两个字段，同时支持按照score排序。
 
-**常见命令**：
+常见命令：
 * **添加成员**：`zadd <key> <score> <member>`
 * **删除成员**：`zrem <key> <member>`
 * **查询成员数**：`zcard <key>`
@@ -18,7 +18,7 @@ Zset（也叫Sorted Set）是Redis中的一种数据结构，支持传member和s
 * **查询指定成员分数**：`zscore <key> <member>`
 * ...
 
-**使用场景**：
+使用场景：
 * **排行榜**：把用户分数存到score，可以按照分数高低查询（如TopN）
 * **延迟队列**：把延迟队列的执行时间戳存到score，可以轮询取出历史延迟队列并消费
 
@@ -31,7 +31,4 @@ Zset底层实现一般分为跳表（skiplist）和压缩列表（ziplist），�
 
 ### 2、跳表（skiplist）
 skiplist是一种基于并联链表的数据结构，实现简单，插入、删除、查找的复杂度均为O(logN)
-//TODO：实现
-
-
-
+具体可参考[《什么是跳表？》](https://garyleeeee.github.io/2023/09/10/data/shi-me-shi-tiao-biao/)
