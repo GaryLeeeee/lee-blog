@@ -99,3 +99,6 @@
 
 ## :books: 数据结构
 - [什么是跳表？](https://garyleeeee.github.io/2023/09/10/data/shi-me-shi-tiao-biao/)
+
+## :four_leaf_clover: MongoDB
+- [MongoDB和MySQL有什么区别？](https://garyleeeee.github.io/2023/09/11/mongodb/mongodb-he-mysql-you-shi-me-qu-bie/)
