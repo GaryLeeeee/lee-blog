@@ -63,6 +63,20 @@ Sentinel每秒一次向所有与它建立了命令连接的实例（主服务器
 **选举Leader Sentinel**
 当一个主服务器被判定为客观下线后，监视这个主服务器的所有Sentinel会通过选举算法（raft），选出一个Leader Sentinel去执行failover（故障转移）操作
 
+**主服务器选择**
+当选举出Leader Sentinel后，Leader Sentinel会根据以下规则从服务器中选择出新的主服务器：
+* 过滤掉主观、客观下线的节点
+* 选择配置`slave-priority`最高的节点，如果有则返回没有就继续选择
+* 选择出复制偏移量最大的节点，因为复制偏移量越大则说明数据复制得越完整
+* 选择runid最小的节点，因为runid越小说明重启次数越少
+
+**故障转移**
+当Leader Sentinel完成新的主服务器选择后，Leader Sentinel会对下线的主服务器执行故障转移操作
+主要有三个步骤：
+1. 它会将失效Master的其中一个Slave升级为新的Master，并让失效Master的其他Slave改为复制新的Master
+2. 当客户端试图连接失效的Master时，集群会向客户端返回新Master的地址，使得集群当前状态只有一个Master
+3. Master和Slave服务器切换后，Master的redis.conf、Slave的redis.conf和sentinel.conf的配置文件的内容都会发生相应的改变，即Master主服务器的redis.conf配置文件中会多一行`replicaof`的配置，sentinel.conf的监控目标也会随之调换
+
 ## 三、Redis哨兵模式和Redis Cluster有什么区别？
 **读写**：
 * 哨兵模式通过主从复制，实现读写分离，分担redis读操作压力
