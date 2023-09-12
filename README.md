@@ -32,6 +32,7 @@
 - [如何实现多级缓存？](https://garyleeeee.github.io/2023/08/25/redis/ru-he-shi-xian-duo-ji-huan-cun/)
 - [Redis的持久化机制是怎样的？](https://garyleeeee.github.io/2023/09/05/redis/redis-de-chi-jiu-hua-ji-zhi-shi-zen-yang-de/)
 - [Redis中的Zset是怎么实现的？](https://garyleeeee.github.io/2023/09/10/redis/redis-zhong-de-zset-shi-zen-me-shi-xian-de/)
+- [如何解决Redis的热点key问题？](https://garyleeeee.github.io/2023/09/12/redis/ru-he-jie-jue-redis-de-re-dian-key-wen-ti/)
 
 ## :computer: JVM
 - [GC学习笔记](https://garyleeeee.github.io/2023/07/12/jvm/gc-xue-xi-bi-ji/)
