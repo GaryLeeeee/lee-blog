@@ -61,6 +61,7 @@
 - [什么是消息队列？](https://garyleeeee.github.io/2023/09/13/kafka/shi-me-shi-xiao-xi-dui-lie/)
 - [什么是Kafka的重平衡机制？](https://garyleeeee.github.io/2023/09/13/kafka/shi-me-shi-kafka-de-chong-ping-heng-ji-zhi/)
 - [Kafka的副本机制有什么用？](https://garyleeeee.github.io/2023/09/14/kafka/kafka-de-fu-ben-ji-zhi-you-shi-me-yong/)
+- [Kafka如何避免重复消费？](https://garyleeeee.github.io/2023/09/14/kafka/kafka-ru-he-bi-mian-chong-fu-xiao-fei/)
 
 ## :memo: Http
 - [Http学习笔记](https://garyleeeee.github.io/2023/07/03/http-xue-xi-bi-ji/)
