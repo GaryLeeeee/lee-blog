@@ -96,3 +96,7 @@ Sticky是最新也是最复杂的策略，主要是为了让目前的分配尽�
 * **session.timeout.ms**: 6s
 * **heartbeat.interval.ms**: 2s
 * **max.poll.interval.ms**：建议大于消费者处理消息最长耗时
+
+## 五、Q&A
+### 1、重平衡时分配消费者的顺序是怎样的？
+重平衡时分配消费者是按照消费组名的字典排序去进行分配的，如`consumerA`分配时会比`consumerB`先分配到分区
