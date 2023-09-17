@@ -111,3 +111,6 @@
 
 ## :four_leaf_clover: MongoDB
 - [MongoDB和MySQL有什么区别？](https://garyleeeee.github.io/2023/09/11/mongodb/mongodb-he-mysql-you-shi-me-qu-bie/)
+
+## :earth_asia: 分布式
+- [什么是分布式系统？](https://garyleeeee.github.io/2023/09/17/distributed/shi-me-shi-fen-bu-shi-xi-tong/)
