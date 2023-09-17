@@ -114,3 +114,4 @@
 
 ## :earth_asia: 分布式
 - [什么是分布式系统？](https://garyleeeee.github.io/2023/09/17/distributed/shi-me-shi-fen-bu-shi-xi-tong/)
+- [什么是CAP模型？](https://garyleeeee.github.io/2023/09/17/distributed/shi-me-shi-cap-mo-xing/)
