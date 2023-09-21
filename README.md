@@ -119,3 +119,6 @@
 - [什么是BASE理论？](https://garyleeeee.github.io/2023/09/18/distributed/shi-me-shi-base-li-lun/)
 - [什么是分布式事务？](https://garyleeeee.github.io/2023/09/18/distributed/shi-me-shi-fen-bu-shi-shi-wu/)
 - [什么是两阶段提交和三阶段提交？](https://garyleeeee.github.io/2023/09/18/distributed/shi-me-shi-liang-jie-duan-ti-jiao-he-san-jie-duan-ti-jiao/)
+
+## :bulb: 线上问题排查
+- [没做线程池隔离导致的线上故障分析](https://garyleeeee.github.io/2023/09/20/trouble/mei-zuo-xian-cheng-chi-ge-chi-dao-zhi-de-xian-shang-gu-zhang-fen-xi/)
