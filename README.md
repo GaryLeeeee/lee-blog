@@ -90,6 +90,7 @@
 - [如何防止库存超卖？](https://garyleeeee.github.io/2023/08/20/scene/ru-he-fang-zhi-ku-cun-chao-mai/)
 - [如何设计一个购物车功能？](https://garyleeeee.github.io/2023/08/25/scene/ru-he-she-ji-yi-ge-gou-wu-che-gong-neng/)
 - [如何提升接口的性能？](https://garyleeeee.github.io/2023/09/10/scene/ru-he-ti-sheng-jie-kou-de-xing-neng/)
+- [如何并发执行多个任务并等待执行结果？](https://garyleeeee.github.io/2023/10/02/scene/ru-he-bing-fa-zhi-xing-duo-ge-ren-wu-bing-deng-dai-zhi-xing-jie-guo/)
 
 ## :battery: 代码优化
 - [如何优化大量if-else代码结构？](https://garyleeeee.github.io/2023/07/31/ru-he-you-hua-da-liang-if-else-dai-ma-jie-gou/)
