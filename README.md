@@ -56,6 +56,7 @@
 - [synchronized的锁升级过程是怎样的？](https://garyleeeee.github.io/2023/09/10/concurrent/synchronized-de-suo-sheng-ji-guo-cheng-shi-zen-yang-de/)
 - [synchronized的锁优化是怎样的？](https://garyleeeee.github.io/2023/09/11/concurrent/synchronized-de-suo-you-hua-shi-zen-yang-de/)
 - [线程池有哪几种？为什么不建议用Executors创建？](https://garyleeeee.github.io/2023/10/03/concurrent/xian-cheng-chi-you-na-ji-chong-wei-shi-me-bu-jian-yi-yong-executors-chuang-jian/)
+- [线程池的最佳实践](https://garyleeeee.github.io/2023/10/03/concurrent/xian-cheng-chi-de-zui-jia-shi-jian/)
 
 ## :art: Kafka
 - [Kafka面试题](https://garyleeeee.github.io/2023/07/12/kafka-mian-shi-ti/)
