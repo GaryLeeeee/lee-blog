@@ -68,6 +68,7 @@
 - [Kafka如何保证数据不丢失？](https://garyleeeee.github.io/2023/09/14/kafka/kafka-ru-he-bao-zheng-shu-ju-bu-diu-shi/)
 - [Kafka如何保证顺序消费？](https://garyleeeee.github.io/2023/09/14/kafka/kafka-ru-he-bao-zheng-shun-xu-xiao-fei/)
 - [Kafka中Partition和Consumer数量应该怎么分配？](https://garyleeeee.github.io/2023/10/02/kafka/kafka-zhong-partition-he-consumer-shu-liang-ying-gai-zen-me-fen-pei/)
+- [Kafka高水位是什么？](https://garyleeeee.github.io/2023/10/03/kafka/kafka-gao-shui-wei-shi-shi-me/)
 
 ## :memo: Http
 - [Http学习笔记](https://garyleeeee.github.io/2023/07/03/http-xue-xi-bi-ji/)
