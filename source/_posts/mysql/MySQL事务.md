@@ -51,3 +51,11 @@ update table set B.amount = 1500 where name = 'B';
 * C：<font color=red>redo log日志实现</font>，用于灾难恢复，存储了修改但未提交的数据，当发生断电等异常灾难时，会通过redo log日志做一个提交恢复
 * I：<font color=red>MVCC实现</font>，主要由索引的隐藏列和undo log日志实现，其中索引的隐藏列包含了该行数据的版本号、删除时间、指向undo log的指针等。当读取数据时，mysql根据隐藏列判断是否需要回滚并找到回滚需要的undo log，从而实现MVCC
 * D：一致性是事务的最终目标（由前面的A、C、I实现）
+
+## 三、Q&A
+### 1、不可重复读和幻读的区别是什么？
+**不可重复读**和**幻读**都是MySQL事务中的数据安全问题，他们的区别在于：
+* **结果**：不可重复读和幻读的结果都是数据不一致
+* **影响对象**：不可重复读一般是单一记录查询，幻读一般是范围查询
+* **操作类型**：不可重复读一般是update操作，幻读一般是insert、delete操作
+* **锁**：执行update、delete时可以用**记录锁（Record Lock）**保证不出现不可重复读，但因为只能锁住已存在的数据，所以在执行insert时需要额外依赖**间隙锁（Gap Lock），也就是间隙锁（Next-Key Lock=Record Lock + Gap Lock）**才能保证不出现幻读
