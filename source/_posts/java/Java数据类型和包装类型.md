@@ -1,5 +1,5 @@
 ---
-title: Java常见基础知识点
+title: Java数据类型和包装类型
 date: 2023-10-20 23:13:49
 tags:
 categories: [Java]
