@@ -42,3 +42,92 @@ categories: [Java]
 * **比较方式**：基本数据类型通过`==`比较值，包装类型通过`equals`比较值（包装类型通过`==`比较的是对象内存地址）
 * **占用空间**：基本数据类型占用空间相比包装类型的要小
 * **JVM存储**：基本数据类型的局部变量存放在JVM栈中的局部变量表中，<font color=red>成员变量存放在JVM的堆中</font>；包装类型都存放在JVM的堆中（因为都是对象）
+
+## 三、包装类型的缓存机制
+Java基本数据类型的包装类型大部分都提供了缓存机制来提升性能，比如：
+* `Byte`、`Short`、`Integer`、`Long`缓存了范围`[-128, 127]`的数据
+* `Character`缓存了范围`[0,127]`的数据
+* `Boolean`直接返回`TRUE`or`FALSE`
+
+**`Integer`缓存实现**：
+```java
+public static Integer valueOf(int i) {
+    if (i >= IntegerCache.low && i <= IntegerCache.high)
+        return IntegerCache.cache[i + (-IntegerCache.low)];
+    return new Integer(i);
+}
+
+private static class IntegerCache {
+    static final int low = -128;
+    static final int high;
+    
+    static {
+        // high value may be configured by property
+        int h = 127;
+        String integerCacheHighPropValue =
+                sun.misc.VM.getSavedProperty("java.lang.Integer.IntegerCache.high");
+        if (integerCacheHighPropValue != null) {
+            try {
+                int i = parseInt(integerCacheHighPropValue);
+                i = Math.max(i, 127);
+                // Maximum array size is Integer.MAX_VALUE
+                h = Math.min(i, Integer.MAX_VALUE - (-low) -1);
+            } catch( NumberFormatException nfe) {
+                // If the property cannot be parsed into an int, ignore it.
+            }
+        }
+        high = h;
+        // ...
+    }
+}
+```
+
+**`Character`缓存实现**：
+```java
+public static Character valueOf(char c) {
+    if (c <= 127) { // must cache
+        return CharacterCache.cache[(int)c];
+    }
+    return new Character(c);
+}
+
+private static class CharacterCache {
+    private CharacterCache() {}
+    static final Character cache[] = new Character[127 + 1];
+    static {
+        for (int i = 0; i < cache.length; i++)
+            cache[i] = new Character((char)i);
+    }
+}
+```
+
+**`Boolean`缓存实现**：
+```java
+public static Boolean valueOf(boolean b) {
+    return (b ? TRUE : FALSE);
+}
+```
+
+超过范围的话则还是会创建新的对象，这个范围的大小是在性能和资源之间做权衡得出的。
+
+浮点型的包装类型`Float`、`Double`并没有实现缓存机制
+```java
+Integer i1 = 50;
+Integer i2 = 50;
+System.out.println(i1 == i2); // 输出true
+
+Float f1 = 50f;
+Float f2 = 50f;
+System.out.println(f1 == f2); // 输出false
+
+Double d1 = 5.5;
+Double d2 = 5.5;
+System.out.println(d1 == d2); // 输出false
+```
+
+如果我们用new的方式声明对象，那么它将会创建一个新的对象，不会使用缓存
+```java
+Integer i1 = 50;
+Integer i2 = new Integer(50);
+System.out.println(i1 == i2); // 输出false
+```
