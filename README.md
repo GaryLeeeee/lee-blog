@@ -7,6 +7,7 @@
 - [Java动态代理](https://garyleeeee.github.io/2023/08/12/java-dong-tai-dai-li/)
 - [Object类的equals和hashCode方法有什么用？](https://garyleeeee.github.io//2023/10/19/java/object-lei-de-equals-he-hashcode-fang-fa-you-shi-me-yong/)
 - [Java数据类型和包装类型](https://garyleeeee.github.io/2023/10/20/java/java-shu-ju-lei-xing-he-bao-zhuang-lei-xing/)
+- [深拷贝和浅拷贝有什么区别？](https://garyleeeee.github.io/2023/10/23/java/shen-kao-bei-he-qian-kao-bei-you-shi-me-qu-bie/)
 
 ## :floppy_disk: MySQL
 - [MySQL锁](https://garyleeeee.github.io/2023/07/06/mysql/mysql-suo/)
