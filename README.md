@@ -13,6 +13,7 @@
 - [Java是值传递还是引用传递？](https://garyleeeee.github.io/2023/10/24/java/java-shi-zhi-chuan-di-huan-shi-yin-yong-chuan-di/)
 - [什么是反射机制？](https://garyleeeee.github.io/2023/10/24/java/shi-me-shi-fan-she-ji-zhi/)
 - [什么是语法糖？](https://garyleeeee.github.io/2023/10/24/java/shi-me-shi-yu-fa-tang/)
+- [Java集合详解][]
 
 ## :floppy_disk: MySQL
 - [MySQL锁](https://garyleeeee.github.io/2023/07/06/mysql/mysql-suo/)
@@ -140,3 +141,5 @@
 - [没做线程池隔离导致的线上故障分析](https://garyleeeee.github.io/2023/09/20/trouble/mei-zuo-xian-cheng-chi-ge-chi-dao-zhi-de-xian-shang-gu-zhang-fen-xi/)
 - [线上Redis的Zset集合占用内存过大问题分析](https://garyleeeee.github.io/2023/09/28/trouble/xian-shang-redis-de-zset-ji-he-zhan-yong-nei-cun-guo-da-wen-ti-fen-xi/)
 - [压测分析](https://garyleeeee.github.io/2023/09/28/trouble/ya-ce-fen-xi/)
+
+[]: https://garyleeeee.github.io/2023/10/25/java/java-ji-he-xiang-jie/
