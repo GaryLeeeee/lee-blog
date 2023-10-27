@@ -122,3 +122,11 @@ public void increase() {
     }
 }
 ```
+
+## 五、Q&A
+### 1、volatile和synchronized有什么区别？
+`volatile`和`synchronzied`的区别如下：
+* **作用域**：`volatile`只能用于变量，`synchronized`能用于方法和代码块
+* **性能**：`volatile`是`synchronized`的轻量级实现，所以性能较好
+* **数据同步**：`volatile`只能保证数据的可见性，不能保证数据的原子性，`synchronized`能保证数据的可见性和原子性
+* **目的**：`volatile`主要用于解决变量在多个线程之间的可见性，`synchronized`主要用于解决多个线程之间访问资源的同步性
