@@ -33,3 +33,8 @@ public class SynchronizedDemo {
 ```
 
 **解析**：`method1()`和`method2()`都用了`synchronized`修饰，所以他们锁住的是当前对象`this`，当`method1()`调用`method2()`时，判断两个方法都是被当前对象占有，所以可以直接获得锁并执行
+
+### 2、什么是公平锁和非公平锁？
+简单来说，公平锁就是线程按顺序获得锁（先等待先获得），非公平锁就是随机获得锁（可能造成某个线程等待太久）。
+
+`synchronized`是非公平锁，`ReentrantLock`是公平锁，通过`ReentrantLock(boolean fair)`构造方法来指定。
