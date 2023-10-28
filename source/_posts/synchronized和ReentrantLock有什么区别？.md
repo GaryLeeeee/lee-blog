@@ -38,3 +38,8 @@ public class SynchronizedDemo {
 简单来说，公平锁就是线程按顺序获得锁（先等待先获得），非公平锁就是随机获得锁（可能造成某个线程等待太久）。
 
 `synchronized`是非公平锁，`ReentrantLock`是公平锁，通过`ReentrantLock(boolean fair)`构造方法来指定。
+
+### 3、什么是可中断锁和不可中断锁？
+`synchronized`是不可中断锁，`ReentrantLock`是可中断锁，他们之间的区别是：
+* **可中断锁**：获取锁的过程中可以被中断，不需要一直等待到获取锁之后才能执行其他逻辑
+* **不可中断锁**：一旦尝试获取锁，就必须等待到获取锁之后才能执行其他逻辑
