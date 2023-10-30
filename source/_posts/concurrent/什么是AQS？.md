@@ -1,7 +1,7 @@
 ---
 title: 什么是AQS？
 date: 2023-10-29 13:21:51
-tags:
+tags: [AQS]
 categories: [并发]
 ---
 
@@ -21,5 +21,6 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
 
 ## 二、AQS实现原理
 在AQS内部，维护了：
-* **FIFO队列**：用来实现线程的排队工作，当线程加锁失败时，该线程会封装成一个Node节点放在队列尾部
 * **state变量**：用`volatile int`修饰，当state大于0的时候说明对象锁已经被占有了，state的修改动作是通过**CAS**来完成的
+* **工作队列**：FIFO队列，用来实现线程的排队工作，当线程加锁失败时，该线程会封装成一个**Node节点**放在队列尾部
+* **Node节点**：存放了`int waitStatus`、`Node prev`、`Node next`、`Thread thread`
