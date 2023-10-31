@@ -45,6 +45,7 @@
 - [如何提高缓存命中率？](https://garyleeeee.github.io/2023/09/13/redis/ru-he-ti-gao-huan-cun-ming-zhong-lu/)
 - [为什么Redis集群的最大槽数是16384？](https://garyleeeee.github.io/2023/09/19/redis/wei-shi-me-redis-ji-qun-de-zui-da-cao-shu-shi-16384/)
 - [如何实现本地缓存？](https://garyleeeee.github.io/2023/10/05/ru-he-shi-xian-ben-di-huan-cun/)
+- [Redis除了做缓存，还能做什么？](https://garyleeeee.github.io/2023/10/31/redis/redis-chu-liao-zuo-huan-cun-huan-neng-zuo-shi-me/)
 
 ## :computer: JVM
 - [GC学习笔记](https://garyleeeee.github.io/2023/07/12/jvm/gc-xue-xi-bi-ji/)
