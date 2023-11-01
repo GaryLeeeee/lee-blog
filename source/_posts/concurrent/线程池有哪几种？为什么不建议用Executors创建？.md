@@ -33,4 +33,6 @@ public class Executors {
 }
 ```
 
-
+## 三、Q&A
+### 1、为什么LinkedBlockingQueue是无界的？
+因为它前面加了Linked，代表他是一个链表。链表跟数组不同的是，链表是动态添加元素的，不像数组一开始就初始化好数组大小。
