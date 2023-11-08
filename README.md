@@ -48,6 +48,7 @@
 - [Redis除了做缓存，还能做什么？](https://garyleeeee.github.io/2023/10/31/redis/redis-chu-liao-zuo-huan-cun-huan-neng-zuo-shi-me/)
 - [Redis有哪几种数据类型？分别有什么应用场景？](https://garyleeeee.github.io/2023/11/07/redis/redis-you-na-ji-chong-shu-ju-lei-xing-fen-bie-you-shi-me-ying-yong-chang-jing/)
 - [Redis为什么单线程还这么快？为什么后面又引入多线程？](https://garyleeeee.github.io/2023/11/07/redis/redis-wei-shi-me-dan-xian-cheng-huan-zhe-me-kuai-wei-shi-me-hou-mian-you-yin-ru-duo-xian-cheng/)
+- [Redis如何做性能优化？](https://garyleeeee.github.io/2023/11/08/redis/redis-ru-he-zuo-xing-neng-you-hua/)
 
 ## :computer: JVM
 - [GC学习笔记](https://garyleeeee.github.io/2023/07/12/jvm/gc-xue-xi-bi-ji/)
