@@ -52,6 +52,7 @@
 - [Redis有哪几种常用的缓存读写策略？](https://garyleeeee.github.io/2023/11/08/redis/redis-you-na-ji-chong-chang-yong-de-huan-cun-du-xie-ce-lue/)
 - [Redis集群中什么是脑裂问题？如何解决的？](https://garyleeeee.github.io/2023/11/10/redis/redis-ji-qun-zhong-shi-me-shi-nao-lie-wen-ti-ru-he-jie-jue-de/)
 - [什么是Redis的数据分片？](https://garyleeeee.github.io/2023/11/13/redis/shi-me-shi-redis-de-shu-ju-fen-pian/)
+- [为什么Lua脚本可以保证原子性？](https://garyleeeee.github.io/2023/11/13/redis/wei-shi-me-lua-jiao-ben-ke-yi-bao-zheng-yuan-zi-xing/)
 
 ## :computer: JVM
 - [GC学习笔记](https://garyleeeee.github.io/2023/07/12/jvm/gc-xue-xi-bi-ji/)
