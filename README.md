@@ -139,6 +139,7 @@
 
 ## :triangular_ruler: MyBatis
 - [Mybatis中有哪些占位符？区别是什么？](https://garyleeeee.github.io/2023/09/09/mybatis/mybatis-zhong-you-na-xie-zhan-wei-fu-qu-bie-shi-shi-me/)
+- [Mybatis的工作原理是什么？](https://garyleeeee.github.io/2023/11/21/mybatis/mybatis-de-gong-zuo-yuan-li-shi-shi-me/)
 
 ## :books: 数据结构
 - [什么是跳表？](https://garyleeeee.github.io/2023/09/10/data/shi-me-shi-tiao-biao/)
