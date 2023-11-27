@@ -161,3 +161,6 @@
 - [没做线程池隔离导致的线上故障分析](https://garyleeeee.github.io/2023/09/20/trouble/mei-zuo-xian-cheng-chi-ge-chi-dao-zhi-de-xian-shang-gu-zhang-fen-xi/)
 - [线上Redis的Zset集合占用内存过大问题分析](https://garyleeeee.github.io/2023/09/28/trouble/xian-shang-redis-de-zset-ji-he-zhan-yong-nei-cun-guo-da-wen-ti-fen-xi/)
 - [压测分析](https://garyleeeee.github.io/2023/09/28/trouble/ya-ce-fen-xi/)
+
+## :fax: Dubbo
+- [Zookeeper注册中心挂了会影响Dubbo服务间的正常通信吗？](https://garyleeeee.github.io/2023/11/27/dubbo/zookeeper-zhu-ce-zhong-xin-gua-liao-hui-ying-xiang-dubbo-fu-wu-jian-de-zheng-chang-tong-xin-ma/)
