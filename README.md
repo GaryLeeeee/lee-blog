@@ -30,6 +30,7 @@
 - [limit 1000000,0加载很慢如何优化？](https://garyleeeee.github.io/2023/08/20/mysql/limit1000000-0-jia-zai-hen-man-ru-he-you-hua/)
 - [InnoDB和MyISAM有什么区别？](https://garyleeeee.github.io/2023/09/05/mysql/innodb-he-myisam-you-shi-me-qu-bie/)
 - [MySQL中一条SQL的执行过程是怎样的？](https://garyleeeee.github.io/2023/09/11/mysql/mysql-zhong-yi-tiao-sql-de-zhi-xing-guo-cheng-shi-zen-yang-de/)
+- :trophy:[如何进行分库分表？会带来什么问题？](https://garyleeeee.github.io/2023/11/27/mysql/ru-he-jin-xing-fen-ku-fen-biao-hui-dai-lai-shi-me-wen-ti/)
 
 ## :cloud: Redis
 - [关于对缓存雪崩和缓存穿透的理解，以及如何避免？](https://garyleeeee.github.io/2023/07/24/guan-yu-dui-huan-cun-xue-beng-he-huan-cun-chuan-tou-de-li-jie-yi-ji-ru-he-bi-mian/)

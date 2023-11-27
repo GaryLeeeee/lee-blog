@@ -20,7 +20,7 @@ categories: [MySQL]
 * **索引失效**：可以通过执行计划分析是否走了索引，以及走的索引是否符合预期，从而对索引进行优化或者调整SQL，具体可以参考[《如何排查MySQL索引失效的问题？》](https://garyleeeee.github.io/2023/08/15/mysql/ru-he-pai-cha-mysql-suo-yin-shi-xiao-de-wen-ti/)
 * **多表join**：//TODO
 * **数据量太大**：一般数据量太大，也会导致查询效率遍地，一般优化方案有
-    * **分库分表**
+    * **分库分表**：具体可参考文章[《如何进行分库分表？会带来什么问题？》](https://garyleeeee.github.io/2023/11/27/mysql/ru-he-jin-xing-fen-ku-fen-biao-hui-dai-lai-shi-me-wen-ti/)
     * **数据归档**：如把历史数据打包存储，仅做归档处理，不提供查询等
     * **使用第三方数据库支持**：如同步数据到搜索引擎上，可支持大量数据查询
 * **查询数据太多**：避免使用`select *`，尽量显示查询自己需要的字段，可以有效减少回表
