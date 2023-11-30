@@ -123,6 +123,7 @@
 - [如何保证高并发下的直播送礼能够快速完成？](https://garyleeeee.github.io/2023/11/13/scene/ru-he-bao-zheng-gao-bing-fa-xia-de-zhi-bo-song-li-neng-gou-kuai-su-wan-cheng/)
 - [线上MySQL如何给千万级大表加索引？](https://garyleeeee.github.io/2023/11/22/scene/xian-shang-mysql-ru-he-gei-qian-wan-ji-da-biao-jia-suo-yin/)
 - [如何解决短信验证码接口被狂刷导致系统崩溃的问题？](https://garyleeeee.github.io/2023/11/27/scene/ru-he-jie-jue-duan-xin-yan-zheng-ma-jie-kou-bei-kuang-shua-dao-zhi-xi-tong-beng-kui-de-wen-ti/)
+- [排行榜的最佳实践](https://garyleeeee.github.io/2023/11/28/redis/pai-xing-bang-de-zui-jia-shi-jian/)
 
 ## :battery: 代码优化
 - [如何优化大量if-else代码结构？](https://garyleeeee.github.io/2023/07/31/ru-he-you-hua-da-liang-if-else-dai-ma-jie-gou/)
