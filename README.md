@@ -125,6 +125,7 @@
 - [如何解决短信验证码接口被狂刷导致系统崩溃的问题？](https://garyleeeee.github.io/2023/11/27/scene/ru-he-jie-jue-duan-xin-yan-zheng-ma-jie-kou-bei-kuang-shua-dao-zhi-xi-tong-beng-kui-de-wen-ti/)
 - [排行榜的最佳实践](https://garyleeeee.github.io/2023/11/28/redis/pai-xing-bang-de-zui-jia-shi-jian/)
 - [如何设计一个短链系统？](https://garyleeeee.github.io/2023/12/04/scene/ru-he-she-ji-yi-ge-duan-lian-xi-tong/)
+- [如何设计一个动态Feed流系统？](https://garyleeeee.github.io/2023/12/05/scene/ru-he-she-ji-yi-ge-dong-tai-feed-liu-xi-tong/)
 
 ## :battery: 代码优化
 - [如何优化大量if-else代码结构？](https://garyleeeee.github.io/2023/07/31/ru-he-you-hua-da-liang-if-else-dai-ma-jie-gou/)
