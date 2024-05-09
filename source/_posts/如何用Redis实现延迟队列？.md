@@ -26,7 +26,6 @@ categories: [场景题]
 * 轮询存在时间间隔，所以延时消息的实际消费时间会大于设定的时间
 * 大量轮询会对Redis服务造成压力，所以考虑到性能问题的话，可以考虑MQ，也是支持延时队列
 
-
 ## 五、RocketMQ实现延迟队列
 **介绍**：RocketMQ的定时消息和延时消息本质相同，都是服务端根据消息设置的定时时间在某一固定时刻将消息投递给消费者消费
 **优势**：传统的数据库扫描方式较为复杂，需要轮询，容易产生性能瓶颈，而RocketMQ具有高并发和水平扩展的能力
@@ -34,5 +33,5 @@ categories: [场景题]
 https://rocketmq.apache.org/zh/docs/featureBehavior/02delaymessage/
 https://blog.csdn.net/qq_19734597/article/details/129194011
 
-
-
+## 六、代码实现(Go)
+https://github.com/GaryLeeeee/lee-code-repository/tree/master/lee-rd-code-go/delay_queue
