@@ -84,7 +84,7 @@ hexo d是hexo doploy的缩写，用来部署服务到远程
 |categories|分类名(后面有讲)|
 
 ## 7.常见问题
-### matery主题如果没有tags/categories/about页面？
+### 7.1 matery主题如果没有tags/categories/about页面？
 新增标签tags页面(categories/about类似)
 `tags`页是用来展示所有标签的页面，如果在你的博客`source`目录下还没有`tags/index.md`文件，那么你就需要新建一个，命令如下：
 >hexo new page "tags"
@@ -95,19 +95,19 @@ date: 2021-07-31 16:40:30
 type: "tags"
 layout: "tags"
 
-### 部署远程后没更新
+### 7.2 部署远程后没更新
 删除本地.deploy_git目录，重新执行`hexo d -g`
 
 
-### 如何上传本地图片
+### 7.3 如何上传本地图片
 在source目录新建一个图片目录(如images)，然后在博客里引用(参考https://zhuanlan.zhihu.com/p/104996801)
 `![img.png](/images/img.png)`
 
-### 如何代码格式化
+### 7.4 如何代码格式化
 ![img.png](source/images/代码高亮优化前.png)
 ![代码高亮优化后](/images/代码高亮优化后.png)
 
-### 部署异常（鉴权失败）
+### 7.5 部署异常（鉴权失败）
 执行指令`hexo d -g`报错
 ```
 On branch master
@@ -201,3 +201,12 @@ Branch master set up to track remote branch master from git@github.com:GaryLeeee
 INFO  Deploy done: git
 ```
 搞定！
+
+### 7.6 新环境hexo命令无法使用？
+```
+D:\code-r\lee-blog> hexo
+ERROR Cannot find module 'hexo' from 'D:\code-respostory\lee-blog'
+ERROR Local hexo loading failed in D:\code-respostory\lee-blog
+ERROR Try running: 'rm -rf node_modules && npm install --force'
+```
+原因是没有下载对应的依赖，直接在项目下执行```npm install```后重试即可
