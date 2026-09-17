@@ -57,7 +57,7 @@ hexo s是hexo server的缩写，用于本地启动服务，可以通过http://lo
 ### 5.1 配置git账户信息
 deploy:
   type: git
-  repository: git@github.com:GaryLeeeee/garyleeeee.github.io.git
+  repository: git@github.com:$${GitHub用户名}/${仓库名}.git
   branch: master
 
 ### 5.2 安装deployer插件
@@ -195,9 +195,9 @@ Compressing objects: 100% (738/738), done.
 Writing objects: 100% (1167/1167), 7.87 MiB | 254.00 KiB/s, done.
 Total 1167 (delta 397), reused 0 (delta 0)
 remote: Resolving deltas: 100% (397/397), done.
-To github.com:GaryLeeeee/garyleeeee.github.io.git
+To github.com:GaryLeeeee/${仓库名}.git
  + 06ab1b8...af6b499 HEAD -> master (forced update)
-Branch master set up to track remote branch master from git@github.com:GaryLeeeee/garyleeeee.github.io.git.
+Branch master set up to track remote branch master from git@github.com:GaryLeeeee/${仓库名}.git.
 INFO  Deploy done: git
 ```
 搞定！
@@ -227,13 +227,13 @@ and the repository exists.
 ```
 deploy:
   type: git
-  repository: git@github.com:GaryLeeeee/garyleeeee.github.io.git
+  repository: git@github.com:${GitHub用户名}/${仓库名}.git
   branch: master
 ```
 
 如果`repository`是`git@github.com:xxx/xxx.git`，说明走的是SSH方式，需要本机SSH key能登录GitHub。
 
-#### a.先测试GitHub SSH是否可用
+#### 7.7.1 先测试GitHub SSH是否可用
 ```
 ssh -T git@github.com
 ```
@@ -245,7 +245,7 @@ git@github.com: Permission denied (publickey).
 
 说明当前本机没有可被GitHub识别的SSH key，或者这个key没有目标仓库权限。
 
-#### b.如果本机已有GitLab的key，不要覆盖
+#### 7.7.2 如果本机已有GitLab的key，不要覆盖
 如果`~/.ssh/id_ed25519.pub`已经给GitLab或公司代码库使用，不建议直接复用或覆盖。
 
 可以单独给GitHub生成一把新的key：
@@ -265,7 +265,7 @@ ssh-keygen -t ed25519 -C "你的GitHub邮箱" -f ~/.ssh/id_ed25519_github
 ~/.ssh/id_ed25519.pub
 ```
 
-#### c.把GitHub专用公钥添加到GitHub
+#### 7.7.3 把GitHub专用公钥添加到GitHub
 查看公钥：
 ```
 cat ~/.ssh/id_ed25519_github.pub
@@ -276,7 +276,7 @@ cat ~/.ssh/id_ed25519_github.pub
 GitHub -> Settings -> SSH and GPG keys -> New SSH key
 ```
 
-#### d.配置GitHub使用专用key
+#### 7.7.4 配置GitHub使用专用key
 如果`~/.ssh/config`不存在，可以新建：
 ```
 touch ~/.ssh/config
@@ -300,7 +300,7 @@ Host github.com
 ~/.ssh/id_ed25519
 ```
 
-#### e.重新测试
+#### 7.7.5 重新测试
 ```
 ssh -T git@github.com
 ```
@@ -320,3 +320,78 @@ hexo d -g
 * 当前账号是否有`xxx.github.io`仓库权限
 * `_config.yml`里的`repository`仓库地址是否写对
 * 目标仓库是否存在
+
+### 7.8 hexo d使用了global的Git账号
+执行`hexo d`或`hexo d -g`部署成功了，但是GitHub Pages仓库里的提交人不是自己想要的账号，而是本机global配置的账号。
+
+可以先看一下当前global配置：
+```
+git config --global --get user.name
+git config --global --get user.email
+```
+
+再看一下当前博客源码仓库的local配置：
+```
+git config --local --get user.name
+git config --local --get user.email
+```
+
+如果源码仓库local配置是对的，但`hexo d`还是用了global账号，原因一般是：`hexo-deployer-git`实际会在`.deploy_git`目录里提交部署产物。
+
+也就是说，部署提交不是在当前源码仓库里提交，而是在`.deploy_git`这个临时Git仓库里提交。如果`.deploy_git`没有单独配置`user.name`和`user.email`，就会回退使用global配置。
+
+#### 7.8.1 推荐方式：在_config.yml里配置部署账号
+`hexo-deployer-git`支持在`deploy`下配置`name`和`email`：
+```
+deploy:
+  type: git
+  repository: git@github.com:${GitHub用户名}/${仓库名}.git
+  branch: master
+  name: ${GitHub用户名}
+  email: ${Git提交邮箱}
+```
+
+这样后续`.deploy_git`重新初始化时，也会使用这里配置的账号。
+
+#### 7.8.2 如果.deploy_git已经存在，需要同步改local配置
+如果`.deploy_git`目录已经存在，可能之前已经初始化过，此时可以直接给它设置local账号：
+```
+cd .deploy_git
+git config user.name ${GitHub用户名}
+git config user.email ${Git提交邮箱}
+```
+
+确认配置：
+```
+git config --local --get user.name
+git config --local --get user.email
+```
+
+正常输出：
+```
+${GitHub用户名}
+${Git提交邮箱}
+```
+
+然后回到项目根目录重新部署：
+```
+cd ..
+hexo d -g
+```
+
+#### 7.8.3 也可以删除.deploy_git后重新部署
+如果不想手动改`.deploy_git`配置，也可以删除`.deploy_git`目录，让Hexo下次部署时重新初始化：
+```
+rm -rf .deploy_git
+hexo d -g
+```
+
+前提是`_config.yml`里已经配置了`deploy.name`和`deploy.email`。
+
+#### 7.8.4 为什么不建议直接改global？
+因为本机可能有多个Git账号，比如：
+* 公司GitLab账号
+* 个人GitHub账号
+* 其他项目账号
+
+直接改global会影响其他目录。更推荐按项目或按部署工具单独配置，避免不同仓库提交人混乱。
