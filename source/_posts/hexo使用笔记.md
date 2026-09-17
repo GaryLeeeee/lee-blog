@@ -210,3 +210,113 @@ ERROR Local hexo loading failed in D:\code-respostory\lee-blog
 ERROR Try running: 'rm -rf node_modules && npm install --force'
 ```
 原因是没有下载对应的依赖，直接在项目下执行```npm install```后重试即可
+
+### 7.7 部署异常（鉴权失败）2.0
+执行`hexo d -g`时报错：
+```
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+```
+
+这种一般不是Hexo生成问题，而是部署到GitHub时SSH鉴权失败。
+
+先检查`_config.yml`中的部署地址：
+```
+deploy:
+  type: git
+  repository: git@github.com:GaryLeeeee/garyleeeee.github.io.git
+  branch: master
+```
+
+如果`repository`是`git@github.com:xxx/xxx.git`，说明走的是SSH方式，需要本机SSH key能登录GitHub。
+
+#### a.先测试GitHub SSH是否可用
+```
+ssh -T git@github.com
+```
+
+如果仍然报：
+```
+git@github.com: Permission denied (publickey).
+```
+
+说明当前本机没有可被GitHub识别的SSH key，或者这个key没有目标仓库权限。
+
+#### b.如果本机已有GitLab的key，不要覆盖
+如果`~/.ssh/id_ed25519.pub`已经给GitLab或公司代码库使用，不建议直接复用或覆盖。
+
+可以单独给GitHub生成一把新的key：
+```
+ssh-keygen -t ed25519 -C "你的GitHub邮箱" -f ~/.ssh/id_ed25519_github
+```
+
+这里重点是`-f ~/.ssh/id_ed25519_github`，它会生成：
+```
+~/.ssh/id_ed25519_github
+~/.ssh/id_ed25519_github.pub
+```
+
+不会覆盖原来的：
+```
+~/.ssh/id_ed25519
+~/.ssh/id_ed25519.pub
+```
+
+#### c.把GitHub专用公钥添加到GitHub
+查看公钥：
+```
+cat ~/.ssh/id_ed25519_github.pub
+```
+
+复制输出内容，添加到GitHub：
+```
+GitHub -> Settings -> SSH and GPG keys -> New SSH key
+```
+
+#### d.配置GitHub使用专用key
+如果`~/.ssh/config`不存在，可以新建：
+```
+touch ~/.ssh/config
+chmod 600 ~/.ssh/config
+```
+
+只配置GitHub即可，不影响其他默认GitLab配置：
+```
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_github
+  IdentitiesOnly yes
+```
+
+含义是：访问`github.com`时强制使用`id_ed25519_github`这把key。
+
+其他GitLab地址没有配置的话，会继续走SSH默认逻辑，比如默认尝试：
+```
+~/.ssh/id_rsa
+~/.ssh/id_ed25519
+```
+
+#### e.重新测试
+```
+ssh -T git@github.com
+```
+
+正常会看到类似：
+```
+Hi GaryLeeeee! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+这时候再重新执行：
+```
+hexo d -g
+```
+
+如果仍然失败，再确认：
+* GitHub公钥是否添加到了正确账号
+* 当前账号是否有`xxx.github.io`仓库权限
+* `_config.yml`里的`repository`仓库地址是否写对
+* 目标仓库是否存在
