@@ -1,5 +1,5 @@
 ---
-title: Codex最佳实践：从提需求到检查改动
+title: Codex最佳实践
 date: 2026-09-17 20:35:13
 tags: [Codex]
 categories: [Codex]
@@ -8,6 +8,8 @@ categories: [Codex]
 ## 一、先说结论
 
 Codex用得好不好，提示词只占一部分。更重要的是形成一套稳定的使用习惯：
+
+> **只想快速查阅？** 可直接阅读{% post_link codex/Codex最佳实践-精简速查版 精简速查版 %}。
 
 > **本文统一案例：商城系统**
 >

@@ -11,6 +11,11 @@
   "hexo": {
     "version": "5.4.0"
   },
+  "overrides": {
+    "hexo-filter-github-emojis": {
+      "jsdom": "21.1.2"
+    }
+  },
   "dependencies": {
     "hexo": "^5.0.0",
     "hexo-deployer-git": "^3.0.0",

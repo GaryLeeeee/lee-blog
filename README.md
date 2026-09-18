@@ -1,7 +1,12 @@
 # Gary's Blog
-|Java|MySQL|Redis|JVM|并发|Kafka|Http|工具|场景题|代码优化|Spring|
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [:strawberry:](#strawberry-Java) | [:floppy_disk:](#floppy_disk-MySQL) | [:cloud:](#cloud-Redis) | [:computer:](#computer-JVM) | [:dart:](#dart-并发) | [:art:](#art-Kafka) |[:memo:](#memo-Http)| [:wrench:](#wrench-工具&插件&框架) | [:book:](#book-场景题) | [:battery:](#battery-代码优化) | [:coffee:](#coffee-Spring) |
+|Codex|Java|MySQL|Redis|JVM|并发|Kafka|Http|工具|场景题|代码优化|Spring|
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| [:robot:](#robot-Codex) | [:strawberry:](#strawberry-Java) | [:floppy_disk:](#floppy_disk-MySQL) | [:cloud:](#cloud-Redis) | [:computer:](#computer-JVM) | [:dart:](#dart-并发) | [:art:](#art-Kafka) |[:memo:](#memo-Http)| [:wrench:](#wrench-工具&插件&框架) | [:book:](#book-场景题) | [:battery:](#battery-代码优化) | [:coffee:](#coffee-Spring) |
+
+## :robot: Codex
+- [Codex最佳实践](https://garyleeeee.github.io/2026/09/17/codex/codex-zui-jia-shi-jian/)
+- [Codex最佳实践：精简速查版](https://garyleeeee.github.io/2026/09/18/codex/codex-zui-jia-shi-jian-jing-jian-su-cha-ban/)
+- [如何订阅ChatGPT Plus套餐？](https://garyleeeee.github.io/2026/09/17/codex/ru-he-ding-yue-chatgpt-plus-tao-can/)
 
 ## :strawberry: Java
 - [Java动态代理](https://garyleeeee.github.io/2023/08/12/java-dong-tai-dai-li/)
