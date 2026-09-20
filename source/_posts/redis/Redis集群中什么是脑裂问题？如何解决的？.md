@@ -6,7 +6,7 @@ categories: [Redis]
 ---
 
 ## 一、什么是Redis集群？
-具体可参考文章[《Redis集群》](https://garyleeeee.github.io/2023/08/08/redis/redis-ji-qun/)
+具体可参考文章{% post_link "redis/Redis集群" "《Redis集群》" %}
 
 ## 二、什么是脑裂问题？
 **脑裂**通俗来说就是大脑裂开了，在Redis集群中指的是有多个集群子集，每个集群子集都有自己的大脑（即Leader节点），那么就会出现不同大脑之前的**数据不一致**问题。

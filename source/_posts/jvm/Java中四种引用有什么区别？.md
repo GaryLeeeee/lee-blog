@@ -12,7 +12,7 @@ Java中四种引用分别是：
 * **软引用**：如果一个对象只有软引用，那么当内存不足时才会被垃圾回收器回收（内存充足时不会回收，所以是最大可能性地保证不被回收）。例子代码为`SoftReference<String[]> softReference = new SoftReference<String[]>(new String[]{"a","b"});`
 * **虚引用**：只是一个引用，并没有具体实现，如果一个对象只有虚引用，那么就跟没有引用一样，在任何时候都可能被垃圾回收器回收（虚引用主要用来跟踪对象被垃圾回收的活动）
 
-对于弱引用的例子，可以参考文章[《ThreadLocal是什么？实现原理呢？》](https://garyleeeee.github.io/2023/09/08/concurrent/threadlocal-shi-shi-me-shi-xian-yuan-li-ni/)
+对于弱引用的例子，可以参考文章{% post_link "concurrent/ThreadLocal是什么？实现原理呢？" "《ThreadLocal是什么？实现原理呢？》" %}
 
 ## 二、Java中四种引用有什么区别？
 ||生命周期|OOM前被清理|GC前被潜力|

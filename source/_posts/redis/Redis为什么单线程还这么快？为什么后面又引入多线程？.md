@@ -6,7 +6,7 @@ categories: [Redis]
 ---
 
 ## 一、Redis为什么单线程还这么快？
-Redis为什么这么快？具体可参考文章[《Redis为什么这么快？》](https://garyleeeee.github.io/2023/08/23/redis-wei-shi-me-zhe-me-kuai/)
+Redis为什么这么快？具体可参考文章{% post_link "Redis为什么这么快？" "《Redis为什么这么快？》" %}
 
 我们可能会有疑问：**单线程不就只能监听单个连接了吗？为什么还能这么快？**
 

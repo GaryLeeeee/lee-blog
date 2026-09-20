@@ -31,4 +31,4 @@ SELECT * FROM user WHERE age > 18;  --慢查询SQL
 ```
 
 ## 二、如何定位并解决慢SQL问题？
-一般来说，慢SQL问题都是由索引造成的，少数情况可能是多表查询、深度分页等造成的，具体可以参考[如何进行SQL调优？](https://garyleeeee.github.io/2023/08/19/mysql/ru-he-jin-xing-sql-diao-you/)
+一般来说，慢SQL问题都是由索引造成的，少数情况可能是多表查询、深度分页等造成的，具体可以参考{% post_link "mysql/如何进行SQL调优？" "如何进行SQL调优？" %}

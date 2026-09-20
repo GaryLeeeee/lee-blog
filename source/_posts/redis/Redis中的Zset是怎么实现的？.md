@@ -31,4 +31,4 @@ Zset底层实现一般分为跳表（skiplist）和压缩列表（ziplist），�
 
 ### 2、跳表（skiplist）
 skiplist是一种基于并联链表的数据结构，实现简单，插入、删除、查找的复杂度均为O(logN)
-具体可参考[《什么是跳表？》](https://garyleeeee.github.io/2023/09/10/data/shi-me-shi-tiao-biao/)
+具体可参考{% post_link "data/什么是跳表？" "《什么是跳表？》" %}

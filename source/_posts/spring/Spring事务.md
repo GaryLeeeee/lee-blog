@@ -6,7 +6,7 @@ categories: [Spring]
 ---
 
 ## 一、什么是事务？
-参考[《MySQL事务》](https://garyleeeee.github.io/2023/07/03/mysql/mysql-shi-wu/)
+参考{% post_link "mysql/MySQL事务" "《MySQL事务》" %}
 
 ## 二、Spring支持哪些事务管理类型？
 Spring支持两种类型的事务管理：

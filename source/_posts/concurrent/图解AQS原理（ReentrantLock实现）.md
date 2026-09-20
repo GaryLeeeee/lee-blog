@@ -6,7 +6,7 @@ categories: [并发]
 ---
 
 ## 一、什么是AQS？
-具体可参考文章[《什么是AQS？》](https://garyleeeee.github.io/2023/10/29/concurrent/shi-me-shi-aqs/)
+具体可参考文章{% post_link "concurrent/什么是AQS？" "《什么是AQS？》" %}
 
 ## 二、AQS原理
 在AQS内部，维护了：

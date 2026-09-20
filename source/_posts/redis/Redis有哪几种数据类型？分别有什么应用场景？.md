@@ -19,7 +19,7 @@ Redis常见的数据类型有以下几种：
 
 ## 二、Redis的数据类型分别有什么应用场景？
 **String（字符串）**：
-* **分布式锁**：具体可参考文章[《如何实现一个分布式锁？》](https://garyleeeee.github.io/2023/09/05/concurrent/ru-he-shi-xian-yi-ge-fen-bu-shi-suo/)
+* **分布式锁**：具体可参考文章{% post_link "concurrent/如何实现一个分布式锁？" "《如何实现一个分布式锁？》" %}
 * **单一对象缓存**：存储单一对象用（如商品信息的key为商品id，value为商品信息）
 * **计数**：通过`incr`命令实现原子性自增，可用于如文章阅读量等计数场景
 ---
@@ -39,8 +39,8 @@ Redis常见的数据类型有以下几种：
 ---
 
 **Zset（有序集合）**：
-* **排行榜**：具体可参考文章[《如何实现一个分数相同则按时间排序的排行榜？》](https://garyleeeee.github.io/2023/08/20/scene/ru-he-shi-xian-yi-ge-fen-shu-xiang-tong-ze-an-shi-jian-pai-xu-de-pai-xing-bang/)
-* **延迟队列**：具体可参考文章[《如何用Redis实现延迟队列？》](https://garyleeeee.github.io/2023/07/29/ru-he-yong-redis-shi-xian-yan-chi-dui-lie/)
+* **排行榜**：具体可参考文章{% post_link "scene/如何实现一个分数相同则按时间排序的排行榜？" "《如何实现一个分数相同则按时间排序的排行榜？》" %}
+* **延迟队列**：具体可参考文章{% post_link "如何用Redis实现延迟队列？" "《如何用Redis实现延迟队列？》" %}
 ---
 
 **BitMap（位图）**：

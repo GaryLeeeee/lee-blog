@@ -52,7 +52,7 @@ AOP和OOP是面向不同领域的两种设计思想，具体为：
 * AspectJ AOP基于静态代理来实现，是AOP编程的完全解决方案
 
 ### 3、JDK动态代理和CGLib动态代理有什么区别？
-[Java动态代理](https://garyleeeee.github.io/2023/08/12/java-dong-tai-dai-li/)
+{% post_link "Java动态代理" "Java动态代理" %}
 
 ### 4、什么情况下AOP会生效？
 * 目标类没有配置为bean
@@ -63,4 +63,4 @@ AOP和OOP是面向不同领域的两种设计思想，具体为：
   
 ### 5、Spring AOP是在哪里进行动态代理的？
 正常的Bean会在Bean生命周期的初始化后，通过`BeanPostProcessor.postProcessAfterInitialization`创建AOP的动态代理
-参考：[Spring如何解决循环依赖的问题？](https://garyleeeee.github.io/2023/08/01/spring/spring-ru-he-jie-jue-xun-huan-yi-lai-de-wen-ti/)
+参考：{% post_link "spring/Spring如何解决循环依赖的问题？" "Spring如何解决循环依赖的问题？" %}

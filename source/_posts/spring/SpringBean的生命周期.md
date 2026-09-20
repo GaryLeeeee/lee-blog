@@ -40,7 +40,7 @@ categories: [Spring]
 1. 扫描@Autowired/@Resource等注解的属性
 2. 对扫描出来需要赋值的属性进行依赖注入
 
-另外，Spring是通过三级缓存来解决循环依赖的问题，具体可看[《Spring如何解决循环依赖的问题？》](https://garyleeeee.github.io/2023/08/01/spring/spring-ru-he-jie-jue-xun-huan-yi-lai-de-wen-ti/)
+另外，Spring是通过三级缓存来解决循环依赖的问题，具体可看{% post_link "spring/Spring如何解决循环依赖的问题？" "《Spring如何解决循环依赖的问题？》" %}
 ### 4、初始化
 在初始化阶段，主要是执行一些aware、init等初始化的工作，大概流程为：
 1. aware：执行实现了BeanNameAware、BeanFactoryAware、ApplicationContextAware等接口的方法，如set

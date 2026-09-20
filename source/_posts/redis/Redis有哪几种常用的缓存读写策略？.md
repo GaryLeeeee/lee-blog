@@ -24,7 +24,7 @@ categories: [Redis]
 2. 不存在则查询数据库并返回
 3. 更新缓存
 
-不过这种模式在极端情况下可能会出现数据不一致，具体可参考文章[《Redis和MySQL如何保证数据一致性？》](https://garyleeeee.github.io/2023/07/23/redis-he-mysql-ru-he-bao-zheng-shu-ju-yi-zhi-xing/)
+不过这种模式在极端情况下可能会出现数据不一致，具体可参考文章{% post_link "Redis和MySQL如何保证数据一致性？" "《Redis和MySQL如何保证数据一致性？》" %}
 ### 2、Read/Write Through Pattern（读写穿透）
 **介绍**：通过缓存交互，客户端读写都是直接请求缓存即可，再由缓存跟数据库做数据同步
 **适用场景**：适用读多写少、数据一致性不高的场景

@@ -15,13 +15,13 @@ categories: [Redis]
 * **Lua脚本**：一段Lua脚本可以视为一条命令执行，所以它保证了原子性（但要注意Redis Cluster下无法保证，同时执行异常也无法回滚）
 
 ### 2、大key问题
-具体可参考文章[《如何处理Redis的大key问题？》](https://garyleeeee.github.io/2023/08/19/redis/ru-he-chu-li-redis-de-da-key-wen-ti/)
+具体可参考文章{% post_link "redis/如何处理Redis的大key问题？" "《如何处理Redis的大key问题？》" %}
 
 ### 3、缓存雪崩、缓存穿透问题
-具体可参考文章[《关于对缓存雪崩和缓存穿透的理解，以及如何避免？》](https://garyleeeee.github.io/2023/07/24/guan-yu-dui-huan-cun-xue-beng-he-huan-cun-chuan-tou-de-li-jie-yi-ji-ru-he-bi-mian/)
+具体可参考文章{% post_link "关于对缓存雪崩和缓存穿透的理解，以及如何避免？" "《关于对缓存雪崩和缓存穿透的理解，以及如何避免？》" %}
 
 ### 4、热key问题
-具体可参考文章[《如何解决Redis的热点key问题？》](https://garyleeeee.github.io/2023/09/12/redis/ru-he-jie-jue-redis-de-re-dian-key-wen-ti/)
+具体可参考文章{% post_link "redis/如何解决Redis的热点key问题？" "《如何解决Redis的热点key问题？》" %}
 
 ### 5、慢查询问题
 我们应该减少一些慢查询命令，他们的时间复杂度是O(n)，可能会导致全表扫描，比如：
