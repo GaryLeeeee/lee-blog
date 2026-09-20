@@ -1,30 +1,42 @@
 <%
+var useTextCover = theme.textCover && theme.textCover.enable && !page.img;
 var featureimg = url_for('/medias/bg.jpg');
-if (page.img) {
-    featureimg = url_for(page.img);
-} else {
-    var hashCode = function (str) {
-        if (!str && str.length === 0) {
-            return 0;
-        }
 
-        var hash = 0;
-        for (var i = 0, len = str.length; i < len; i++) {
-            hash = ((hash << 5) - hash) + str.charCodeAt(i);
-            hash |= 0;
-        }
-        return hash;
-    };
+if (!useTextCover) {
+    if (page.img) {
+        featureimg = url_for(page.img);
+    } else {
+        var hashCode = function (str) {
+            if (!str && str.length === 0) {
+                return 0;
+            }
 
-    var len = theme.featureImages.length;
-    var num = Math.abs(hashCode(page.title) % len);
+            var hash = 0;
+            for (var i = 0, len = str.length; i < len; i++) {
+                hash = ((hash << 5) - hash) + str.charCodeAt(i);
+                hash |= 0;
+            }
+            return hash;
+        };
 
-    featureimg = theme.jsDelivr.url
-            ? theme.jsDelivr.url + url_for(theme.featureImages[num])
-            : url_for(theme.featureImages[num]);
+        var len = theme.featureImages.length;
+        var num = Math.abs(hashCode(page.title) % len);
+
+        featureimg = theme.jsDelivr.url
+                ? theme.jsDelivr.url + url_for(theme.featureImages[num])
+                : url_for(theme.featureImages[num]);
+    }
 }
 %>
 
+<% if (useTextCover) { %>
+<div class="bg-cover pd-header post-cover post-cover--text">
+    <%- partial('_partial/text-cover', {
+        textCoverPost: page,
+        textCoverVariant: 'hero'
+    }) %>
+</div>
+<% } else { %>
 <div class="bg-cover pd-header post-cover" style="background-image: url('<%- featureimg %>')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
@@ -36,3 +48,4 @@ if (page.img) {
         </div>
     </div>
 </div>
+<% } %>

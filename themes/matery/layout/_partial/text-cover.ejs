@@ -1,0 +1,34 @@
+<%
+var coverPost = textCoverPost;
+var coverVariant = textCoverVariant || 'card';
+var coverCategory = '文章';
+
+if (coverPost.categories && coverPost.categories.length > 0) {
+    coverPost.categories.forEach(function (category) {
+        if (coverCategory === '文章') {
+            coverCategory = category.name;
+        }
+    });
+}
+
+var hash = 0;
+var coverTitle = coverPost.title || config.title;
+for (var i = 0; i < coverTitle.length; i++) {
+    hash = ((hash << 5) - hash) + coverTitle.charCodeAt(i);
+    hash |= 0;
+}
+
+var paletteIndex = Math.abs(hash % 6);
+var coverDate = coverPost.date ? date(coverPost.date, 'YYYY.MM.DD') : '';
+%>
+
+<div class="text-cover text-cover--<%- coverVariant %> text-cover-palette-<%- paletteIndex %>">
+    <div class="text-cover__meta">
+        <span><%= coverCategory %></span>
+        <% if (coverDate) { %>
+        <span><%= coverDate %></span>
+        <% } %>
+    </div>
+    <div class="text-cover__title"><%= coverTitle %></div>
+    <span class="text-cover__mark" aria-hidden="true"></span>
+</div>

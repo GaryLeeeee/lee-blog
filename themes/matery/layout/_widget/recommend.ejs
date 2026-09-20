@@ -30,6 +30,7 @@
 
     var featureImages = theme.featureImages;
     var imgCount = featureImages.length;
+    var useTextCover = theme.textCover && theme.textCover.enable;
     var bgColorArr = [
             'linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)',
             'linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)',
@@ -51,9 +52,13 @@
         var post = topPosts[i];
         var featureImg = post.img ? url_for(post.img) : url_for(featureImages[Math.abs(hashCode(post.title) % imgCount)]);
         var bgColor = bgColorArr[i % colorCount];
+        var paletteIndex = Math.abs(hashCode(post.title) % 6);
+        var usePostTextCover = useTextCover && !post.img;
     %>
     <div class="col s12 m6" <% if (i > 1) { %>data-aos="zoom-in-up"<% } %>>
-        <% if (post.img) {%>
+        <% if (usePostTextCover) { %>
+            <div class="post-card text-cover-background text-cover-palette-<%- paletteIndex %>">
+        <% } else if (post.img) {%>
              <div class="post-card" style="background-image: url('<%- featureImg %>')">
         <%}else{%>
             <div class="post-card" style="background-image: url('<%- theme.jsDelivr.url %><%- featureImg %>')">
@@ -98,9 +103,13 @@
 
         var featureImg = post.img ? url_for(post.img) : url_for(featureImages[Math.abs(hashCode(post.title) % imgCount)]);
         var bgColor = bgColorArr[i % colorCount];
+        var paletteIndex = Math.abs(hashCode(post.title) % 6);
+        var usePostTextCover = useTextCover && !post.img;
     %>
     <div class="col <%- grid %>" <% if (i > 0) { %>data-aos="zoom-in-up"<% } %>>
-        <% if (post.img) {%>
+        <% if (usePostTextCover) { %>
+            <div class="post-card text-cover-background text-cover-palette-<%- paletteIndex %>">
+        <% } else if (post.img) {%>
              <div class="post-card" style="background-image: url('<%- featureImg %>')">
         <%}else{%>
             <div class="post-card" style="background-image: url('<%- theme.jsDelivr.url %><%- featureImg %>')">

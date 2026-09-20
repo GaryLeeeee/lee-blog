@@ -14,6 +14,7 @@ var hashCode = function (str) {
 
 var featureimg = '/medias/featureimages/0.jpg';
 var featureImages = theme.featureImages;
+var useTextCover = theme.textCover && theme.textCover.enable;
 %>
 
 <article id="prenext-posts" class="prev-next articles">
@@ -25,7 +26,12 @@ var featureImages = theme.featureImages;
             <div class="card">
                 <a href="<%- url_for(page.prev.path) %>">
                     <div class="card-image">
-                        <% if (page.prev.img) { %>
+                        <% if (useTextCover && !page.prev.img) { %>
+                        <%- partial('_partial/text-cover', {
+                            textCoverPost: page.prev,
+                            textCoverVariant: 'card'
+                        }) %>
+                        <% } else if (page.prev.img) { %>
                         <img src="<%- url_for(page.prev.img) %>" class="responsive-img" alt="<%= page.prev.title %>">
                         <% } else { %>
                         <%
@@ -35,7 +41,9 @@ var featureImages = theme.featureImages;
                         %>
                         <img src="<%- theme.jsDelivr.url %><%- url_for(featureimg) %>" class="responsive-img" alt="<%= page.prev.title %>">
                         <% } %>
+                        <% if (!useTextCover || page.prev.img) { %>
                         <span class="card-title"><%= page.prev.title %></span>
+                        <% } %>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -87,7 +95,12 @@ var featureImages = theme.featureImages;
             <div class="card">
                 <a href="<%- url_for(page.path) %>">
                     <div class="card-image">
-                        <% if (page.img) { %>
+                        <% if (useTextCover && !page.img) { %>
+                        <%- partial('_partial/text-cover', {
+                            textCoverPost: page,
+                            textCoverVariant: 'card'
+                        }) %>
+                        <% } else if (page.img) { %>
                         <img src="<%- url_for(page.img) %>" class="responsive-img" alt="<%= page.title %>">
                         <% } else { %>
                         <%
@@ -95,7 +108,9 @@ var featureImages = theme.featureImages;
                         %>
                         <img src="<%- theme.jsDelivr.url %><%- url_for(featureimg) %>" class="responsive-img" alt="<%= page.title %>">
                         <% } %>
+                        <% if (!useTextCover || page.img) { %>
                         <span class="card-title"><%= page.title %></span>
+                        <% } %>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -149,7 +164,12 @@ var featureImages = theme.featureImages;
             <div class="card">
                 <a href="<%- url_for(page.next.path) %>">
                     <div class="card-image">
-                        <% if (page.next.img) { %>
+                        <% if (useTextCover && !page.next.img) { %>
+                        <%- partial('_partial/text-cover', {
+                            textCoverPost: page.next,
+                            textCoverVariant: 'card'
+                        }) %>
+                        <% } else if (page.next.img) { %>
                         <img src="<%- url_for(page.next.img) %>" class="responsive-img" alt="<%= page.next.title %>">
                         <% } else { %>
                         <%
@@ -157,7 +177,9 @@ var featureImages = theme.featureImages;
                         %>
                         <img src="<%- theme.jsDelivr.url %><%- url_for(featureimg) %>" class="responsive-img" alt="<%= page.next.title %>">
                         <% } %>
+                        <% if (!useTextCover || page.next.img) { %>
                         <span class="card-title"><%= page.next.title %></span>
+                        <% } %>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -209,7 +231,12 @@ var featureImages = theme.featureImages;
             <div class="card">
                 <a href="<%- url_for(page.path) %>">
                     <div class="card-image">
-                        <% if (page.img) { %>
+                        <% if (useTextCover && !page.img) { %>
+                        <%- partial('_partial/text-cover', {
+                            textCoverPost: page,
+                            textCoverVariant: 'card'
+                        }) %>
+                        <% } else if (page.img) { %>
                         <img src="<%- url_for(page.img) %>" class="responsive-img" alt="<%= page.title %>">
                         <% } else { %>
                         <%
@@ -217,7 +244,9 @@ var featureImages = theme.featureImages;
                         %>
                         <img src="<%- theme.jsDelivr.url %><%- url_for(featureimg) %>" class="responsive-img" alt="<%= page.title %>">
                         <% } %>
+                        <% if (!useTextCover || page.img) { %>
                         <span class="card-title"><%= page.title %></span>
+                        <% } %>
                     </div>
                 </a>
                 <div class="card-content article-content">

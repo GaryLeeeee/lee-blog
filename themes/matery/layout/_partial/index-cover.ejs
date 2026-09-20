@@ -48,6 +48,7 @@ site.posts.forEach(function (post) {
     }
 });
 var coverPostsCount = coverPosts.length;
+var useTextCover = theme.textCover && theme.textCover.enable;
 %>
 
 <div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
@@ -108,19 +109,23 @@ var coverPostsCount = coverPosts.length;
         <% for (var i = 0; i < coverPostsCount; i++) { %>
             <%
                 var post = coverPosts[i];
-                var featureImage = featureImages[Math.abs(hashCode(post.title) % imgCount)];
+                var paletteIndex = Math.abs(hashCode(post.title) % 6);
+                var usePostTextCover = useTextCover && !post.coverImg && !post.img;
 
                 var coverImg;
-                if (post.coverImg) {
-                    coverImg = post.coverImg;
-                } else if (post.img) {
-                    coverImg = post.img;
-                } else {
-                    coverImg = featureImage;
+                if (!usePostTextCover) {
+                    var featureImage = featureImages[Math.abs(hashCode(post.title) % imgCount)];
+                    if (post.coverImg) {
+                        coverImg = post.coverImg;
+                    } else if (post.img) {
+                        coverImg = post.img;
+                    } else {
+                        coverImg = featureImage;
+                    }
                 }
             %>
-            <div class="carousel-item amber white-text carousel-post bg-cover"
-                 style="background-image: url('<%- theme.jsDelivr.url %><%- url_for(coverImg) %>');">
+            <div class="carousel-item white-text carousel-post bg-cover<% if (usePostTextCover) { %> text-cover-background text-cover-palette-<%- paletteIndex %><% } %>"
+                 <% if (!usePostTextCover) { %>style="background-image: url('<%- theme.jsDelivr.url %><%- url_for(coverImg) %>');"<% } %>>
                 <div class="container">
                     <div class="row">
                         <div class="col s10 offset-s1">

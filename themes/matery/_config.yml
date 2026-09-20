@@ -460,8 +460,12 @@ libs:
     ribbon_dynamic: /libs/background/ribbon-dynamic.js
     instantpage: /libs/instantpage/instantpage.js
 
+# 纯文字文章封面。开启后未配置 img/coverImg 的文章使用文字封面。
+textCover:
+  enable: true
+
 # The post featured images that needs to be displayed when there is no image.
-# 无文章特色图片时需要显示的文章特色图片.
+# 关闭纯文字封面后，无文章特色图片时使用以下图片。
 featureImages:
 - /medias/featureimages/0.jpg
 - /medias/featureimages/1.jpg
