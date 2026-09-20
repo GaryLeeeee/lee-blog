@@ -6,6 +6,8 @@
 ## :robot: Codex
 - [Codex最佳实践](https://garyleeeee.github.io/2026/09/17/codex/codex-zui-jia-shi-jian/)
 - [Codex最佳实践：精简速查版](https://garyleeeee.github.io/2026/09/18/codex/codex-zui-jia-shi-jian-jing-jian-su-cha-ban/)
+- [Codex AGENTS.md使用教程：让项目规则自动生效](https://garyleeeee.github.io/2026/09/18/codex/codex-agents-shi-yong-jiao-cheng/)
+- [Codex Skills使用教程：把重复工作变成可复用流程](https://garyleeeee.github.io/2026/09/18/codex/codex-skills-shi-yong-jiao-cheng/)
 - [如何订阅ChatGPT Plus套餐？](https://garyleeeee.github.io/2026/09/17/codex/ru-he-ding-yue-chatgpt-plus-tao-can/)
 
 ## :strawberry: Java
