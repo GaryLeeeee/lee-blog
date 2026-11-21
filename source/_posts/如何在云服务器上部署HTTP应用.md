@@ -233,7 +233,7 @@ systemctl status lee-toolbox.service --no-pager
 
 同一个公网 IP 的证书可用于不同 HTTPS 端口，ACME 验证仍走 `80` 或 `443`。
 
-这里常说的按 URI 分流，具体匹配的是 `/tools/` 这样的路径。要把当前工具箱放到子路径下，需要一起调整前端路由、静态资源和 `/api/` 请求的前缀。眼下只有 IP，可以保留工具箱的 `443`，给其他应用分配 `8443` 这类额外的 HTTPS 入口。有域名之后，可以用子域名区分，各应用都从根路径访问。
+这里常说的按 URI 分流，具体匹配的是 `/tools/` 这样的路径。要把当前工具箱放到子路径下，需要一起调整前端路由、静态资源和 `/api/` 请求的前缀。只有 IP 时，可以按端口区分入口，例如工具箱用 `443`，Caddy UI 用 `8443`。有域名之后，可以用子域名区分，各应用都从根路径访问。
 
 ### 怎么查看路由？
 
@@ -257,6 +257,49 @@ curl --noproxy '*' -fsS http://localhost:2019/config/apps/http/servers |
 
 **看工具箱有哪些接口。** 登录网站后打开 `https://公网IP/api/docs` 就能看 FastAPI 的接口列表，例如 `GET /api/health`。看源码时，接口注册在 `backend/app/main.py`，`/tasks` 这类前端页面路由在 `frontend/src/app/router.ts`。
 
+## 七、Caddy UI 和 IP 白名单
+
+> 手动改路由或白名单，要 SSH 登录服务器，编辑 Caddyfile，再校验、重载。接入 Caddy UI 后，可以在网页上查看路由、修改并应用配置。这个工具箱用手机打开时，每次都要重新输账号和密码。把常用且可信的公网出口加进白名单，手机连上那个网络就能直接访问。
+
+### 接入管理面板
+
+本例用 Docker Compose 运行社区版 caddy-ui 3.9.1。装好 Docker 和 Compose 后，将工具箱的 `caddy-ui-deploy.tar.gz` 解压到 `/opt/caddy-ui`，在 `compose.yaml` 中把 `CADDY_UI_EXTERNAL_URL` 设为 `https://公网IP:8443`，再执行 `sudo bash /opt/caddy-ui/install.sh`。
+
+1. 在云防火墙放行 TCP `8443`，来源只填管理设备的公网出口 IP，例如 `198.51.100.10/32`。用同一浏览器和网络确认出口 IP。
+2. 在 Caddyfile 新增 `https://PUBLIC_IPV4:8443` 站点块，复用前面的 `tls` 配置，加上 `reverse_proxy 127.0.0.1:9877`，校验后重载。首次打开面板时创建管理员并保存恢复密钥。
+3. 在 **Instances** 中选中预置实例，手动添加时选 **Local**。本例的 `Config Path` 是 `/etc/caddy/Caddyfile`，`Data Path` 是 `/var/lib/caddy/.local/share/caddy`，`Container Name` 留空。`Admin URL` 填内网代理 `http://172.30.201.1:20190`，由它转发到宿主机的 `127.0.0.1:2019`。
+
+选中实例后，在 **Routes** 看转发规则，在 **Caddyfile** 修改配置。管理 API 的 `2019` 和 `20190` 仅供本机和内网使用。
+
+### 给工具箱加免密码 IP 和访问日志
+
+在工具箱的 `https://PUBLIC_IPV4 { ... }` 站点块内，把原有 `basic_auth` 改为下面的写法，保留原账号和密码哈希。将示例 IP 换成实际公网出口，多个 IP 用空格隔开。
+
+```caddyfile
+@need_login not remote_ip 198.51.100.10/32 203.0.113.20/32
+basic_auth @need_login {
+    EXISTING_USER EXISTING_PASSWORD_HASH
+}
+
+log {
+    output file /var/lib/caddy/.local/share/caddy/access.log {
+        roll_size 10MiB
+        roll_keep 7
+    }
+    format json
+}
+```
+
+保存并应用后，用两种网络各开一次无痕窗口。白名单内可直接进入，其他 IP 仍会弹出密码框。给手机加白名单时，先用打算访问的 Wi-Fi 或移动网络查公网 IP，移动网络的出口可能变化或由多人共用。
+
+把实例的 **Log Path** 设为 `/var/lib/caddy/.local/share/caddy/access.log`。重新访问工具箱后，在 **Logs → Caddy** 查看来源 IP、请求路径和状态码。
+
+### 这次踩到的三个坑
+
+- **本机 HTTPS 返回 `200`，公网打不开面板。** 云控制台的「当前登录 IP」取自访问控制台时的出口。这次按浏览器实际出口修正 `8443` 防火墙规则后，面板恢复访问。
+- **内部代理健康检查返回 `403`。** 这次健康检查的来源是服务器自己的内网 IP。在 `admin-proxy.conf` 的 `deny all` 前加一条该 IP 的 `allow`，再到 `/opt/caddy-ui` 执行 `sudo docker compose up -d --force-recreate caddy-ui-admin`。
+- **面板提示保存失败。** 在 `/opt/caddy-ui` 用 `sudo docker compose logs --tail=60 caddy-ui-backend` 查报错。这次是 `@need_login` 写到了站点外。把它与 `basic_auth`、`log` 一起放进工具箱站点的大括号即可。
+
 ## 参考资料
 
 - [Caddy 官方介绍](https://caddyserver.com/)、[Caddy 在 Debian 和 Ubuntu 上的安装](https://caddyserver.com/docs/install#debian-ubuntu-raspbian)
@@ -266,3 +309,4 @@ curl --noproxy '*' -fsS http://localhost:2019/config/apps/http/servers |
 - [Caddy 管理接口](https://caddyserver.com/docs/api)、[Nginx 请求匹配](https://nginx.org/en/docs/http/request_processing.html)、[Nginx 命令参数](https://nginx.org/en/docs/switches.html)、[Nginx ACME 模块](https://nginx.org/en/docs/http/ngx_http_acme_module.html)
 - [Let’s Encrypt IP 证书和有效期](https://letsencrypt.org/2026/01/15/6day-and-ip-general-availability/)
 - [腾讯云轻量实例防火墙](https://cloud.tencent.com/document/product/1207/44577)、[更换实例公网 IP](https://cloud.tencent.com/document/product/1207/71733)
+- [caddy-ui 初始化](https://www.zackwag.com/caddy-ui/setup.html)、[Local 实例设置](https://www.zackwag.com/caddy-ui/instances.html)、[Caddy IP 匹配](https://caddyserver.com/docs/caddyfile/matchers#remote_ip)、[访问日志](https://caddyserver.com/docs/caddyfile/directives/log)
